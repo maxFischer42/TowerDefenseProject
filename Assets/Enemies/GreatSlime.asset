@@ -10,27 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2cc19d4a89bfa4499e8bb7a48b4c750, type: 3}
-  m_Name: SlimeQueen
+  m_Name: GreatSlime
   m_EditorClassIdentifier: 
-  health: 100
+  health: 15
   damage: 1
-  damageToBase: 1
+  damageToBase: 3
   speed: 0.25
   isBoss: 0
-  prize: 1
-  dangerLevel: 1
-  xp: 2
+  prize: 5
+  dangerLevel: 2
+  xp: 5
   additional_damage: 3
   events:
-  - name: Possess
-    condition: 4
-    condition_modifier: 4
+  - name: OnDeathSpawnSlimes
+    condition: 1
+    condition_modifier: 0
     actions:
-    - name: PossessNearbyHero
-      action: 6
+    - name: Spawn3AngeredSlimes
+      action: 0
       spawnEntitiesInfo:
         isEntity: 1
-        spawnEntities: []
+        spawnEntities:
+        - {fileID: 8156373381982439453, guid: 72d7b7f67e6915a42ae891d9bec36d14, type: 3}
+        - {fileID: 8156373381982439453, guid: 72d7b7f67e6915a42ae891d9bec36d14, type: 3}
+        - {fileID: 8156373381982439453, guid: 72d7b7f67e6915a42ae891d9bec36d14, type: 3}
         spawnType: 0
       spawnDamageInfo: []
       attackLocalInfo:
@@ -45,17 +48,16 @@ MonoBehaviour:
       attackAreaInfo:
         damage: 0
         radius: 0
-      timeToPossess: 8
-      possessedTower: {fileID: 2105639993623973786, guid: 87ce3730e08231142808e2bf854300e4, type: 3}
-      radius: 5
-      timeToDisable: 3
+      timeToPossess: 0
+      possessedTower: {fileID: 0}
+      radius: 0
+      timeToDisable: 0
       waitingDuration: 0
     hasCooldown: 0
     isCooldown: 0
     cooldown: 0
     currentCooldown: 0
     timeRangeFromSpawn: {x: 0, y: 0}
-    chance: 2
+    chance: 0
     isOneTime: 0
-  objects:
-  - {fileID: 2105639993623973786, guid: 87ce3730e08231142808e2bf854300e4, type: 3}
+  objects: []

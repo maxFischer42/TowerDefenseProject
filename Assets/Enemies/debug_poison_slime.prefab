@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 5778090819348459009}
   - component: {fileID: 3135412675723518643}
   m_Layer: 0
-  m_Name: debug_slime_queen
+  m_Name: debug_poison_slime
   m_TagString: ENEMY
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,8 +157,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7447334978583807409, guid: 7fb8f53d874dda34ba52f41864bb0691, type: 3}
-  m_Color: {r: 0.5896226, g: 1, b: 0.67835295, a: 1}
+  m_Sprite: {fileID: 368543389579951487, guid: 08c2b8cccded52d44bd91007d6e838f7, type: 3}
+  m_Color: {r: 1, g: 0.6084906, b: 0.9140082, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfa4db5d2c5f39e4e9cd108acf65af0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 11400000, guid: ccb547469bb72504c8e6e78fc929282c, type: 2}
+  enemy: {fileID: 11400000, guid: 460d6b70581cbb44fbaf898d885c237d, type: 2}
   hasSpawned: 0
   hasDied: 0
   healthCanvas: {fileID: 9114411833650895587}
@@ -289,7 +289,7 @@ Animator:
   m_GameObject: {fileID: 526550170585345675}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 788cf7e640bc2e3478591b7cc5a5526e, type: 2}
+  m_Controller: {fileID: 9100000, guid: afd397352f8f49641b5cea7c141370f5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
