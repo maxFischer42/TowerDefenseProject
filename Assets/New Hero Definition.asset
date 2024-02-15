@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f30ef077c524714b9a4024073f7833a, type: 3}
+  m_Name: New Hero Definition
+  m_EditorClassIdentifier: 
+  name: Villager
+  description: A classless villager, not prone to fighting.
+  prefab: {fileID: 2105639993623973786, guid: b08523171503eca41bda11a3909c3638, type: 3}
+  baseHeroInfo:
+    hp: 0
+    mhp: 0
+    index: 0
+  cost: 5
+  damage: 1
+  mxp: 5
+  xpMult: 1.2
+  upgradePath_1: {fileID: 11400000, guid: 2905dd23e033e7a4096ab113b22a5589, type: 2}
+  upgradePath_2: {fileID: 0}

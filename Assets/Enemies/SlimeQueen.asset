@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2cc19d4a89bfa4499e8bb7a48b4c750, type: 3}
+  m_Name: SlimeQueen
+  m_EditorClassIdentifier: 
+  health: 9999999
+  damage: 1
+  damageToBase: 1
+  speed: 0.25
+  isBoss: 0
+  prize: 1
+  dangerLevel: 1
+  xp: 2
+  additional_damage: 3
+  events:
+  - name: Possess
+    condition: 4
+    condition_modifier: 4
+    actions:
+    - name: PossessNearbyHero
+      action: 6
+      spawnEntitiesInfo:
+        spawnEntities: []
+        spawnType: 0
+      spawnDamageInfo: []
+      attackLocalInfo:
+        damage: 0
+      attackRangeInfo:
+        projectile: {fileID: 0}
+        min: 0
+        max: 0
+        priority: 0
+      attackAllInfo:
+        damage: 0
+      attackAreaInfo:
+        damage: 0
+        radius: 0
+      timeToPossess: 8
+      possessedTower: {fileID: 2105639993623973786, guid: 87ce3730e08231142808e2bf854300e4, type: 3}
+      radius: 5
+      timeToDisable: 3
+      waitingDuration: 0
+    hasCooldown: 0
+    isCooldown: 0
+    cooldown: 0
+    currentCooldown: 0
+    timeRangeFromSpawn: {x: 0, y: 0}
+    chance: 2
+    isOneTime: 0
+  objects:
+  - {fileID: 2105639993623973786, guid: 87ce3730e08231142808e2bf854300e4, type: 3}

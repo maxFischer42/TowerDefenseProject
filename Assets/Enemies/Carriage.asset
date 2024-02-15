@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2cc19d4a89bfa4499e8bb7a48b4c750, type: 3}
+  m_Name: Carriage
+  m_EditorClassIdentifier: 
+  health: 15
+  damage: 6
+  damageToBase: 6
+  speed: 1
+  isBoss: 0
+  prize: 3
+  dangerLevel: 2
+  xp: 3
+  events:
+  - name: OnDeathAction
+    condition: 1
+    condition_modifier: 0
+    actions:
+    - name: SpawnRiderOnDeath
+      action: 0
+      spawnEntitiesInfo:
+        spawnEntities:
+        - {fileID: 526550170585345675, guid: 46a8b407fe752dd4693740e89c58658d, type: 3}
+        - {fileID: 526550170585345675, guid: 46a8b407fe752dd4693740e89c58658d, type: 3}
+        - {fileID: 526550170585345675, guid: 46a8b407fe752dd4693740e89c58658d, type: 3}
+        - {fileID: 526550170585345675, guid: 46a8b407fe752dd4693740e89c58658d, type: 3}
+        spawnType: 0
+      spawnDamageInfo: []
+      attackLocalInfo:
+        damage: 0
+      attackRangeInfo:
+        projectile: {fileID: 0}
+        min: 0
+        max: 0
+        priority: 0
+      attackAllInfo:
+        damage: 0
+      attackAreaInfo:
+        damage: 0
+        radius: 0
+      timeToPossess: 5
+      possessedTower: {fileID: 0}
+      radius: 2
+    hasCooldown: 0
+    isCooldown: 0
+    cooldown: 0
+    currentCooldown: 0

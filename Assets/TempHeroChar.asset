@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f30ef077c524714b9a4024073f7833a, type: 3}
+  m_Name: TempHeroChar
+  m_EditorClassIdentifier: 
+  name: TempHeroCharacter
+  description: --- temp ---
+  prefab: {fileID: 2105639993623973786, guid: 1d24035bd596b7c45b8dd8df381f32dd, type: 3}
+  baseHeroInfo:
+    hp: 200
+    mhp: 0
+    index: 0
+  cost: 100
+  damage: 15
+  mxp: 5
+  xpMult: 2
+  TowerIcon: {fileID: 21300000, guid: 5ff5c0ec174b58341960cdad45b08d83, type: 3}
+  DescriptionIcon: {fileID: 1212153061901756225, guid: 9888203ce4e953d41b85bb221c4589e1, type: 3}
+  isSuper: 1
+  upgradePath_1: {fileID: 11400000, guid: 357d1b8b1fa468046aeb4ed7614bf1b2, type: 2}
+  upgradePath_2: {fileID: 11400000, guid: ac849be1a16bf194cbba3069c5933643, type: 2}

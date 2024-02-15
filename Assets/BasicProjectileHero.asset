@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f30ef077c524714b9a4024073f7833a, type: 3}
+  m_Name: BasicProjectileHero
+  m_EditorClassIdentifier: 
+  name: Archer
+  description: Basic projectile unit, shoots arrows at a moderate range.
+  prefab: {fileID: 2105639993623973786, guid: 8a62003c7f38efb4c8de16dc4e9428e0, type: 3}
+  baseHeroInfo:
+    hp: 0
+    mhp: 0
+    index: 0
+  cost: 5
+  damage: 1
+  mxp: 10
+  xpMult: 1.5
+  TowerIcon: {fileID: 21300000, guid: cddf387cc0bd6f048a0f53957a3442d9, type: 3}
+  DescriptionIcon: {fileID: 21300000, guid: cddf387cc0bd6f048a0f53957a3442d9, type: 3}
+  upgradePath_1: {fileID: 11400000, guid: 357d1b8b1fa468046aeb4ed7614bf1b2, type: 2}
+  upgradePath_2: {fileID: 11400000, guid: ac849be1a16bf194cbba3069c5933643, type: 2}

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1c90f3739a7324bbfebdc52bd93842, type: 3}
+  m_Name: CombatTraining
+  m_EditorClassIdentifier: 
+  isLockout: 0
+  modifiers:
+  - type: 4
+    fireRate: 0
+    range: 0
+    newHero: {fileID: 0}
+    newHeroHasPrefab: 0
+    newSpawn: {fileID: 0}
+    newPrefab: {fileID: 0}
+    dmg: 1
+  name: Combat Training
+  blurb: Train the villager in basic combat principles.
+  cost: 5
+  isFinal: 0
+  descendant: {fileID: 11400000, guid: 1abbfb2c12af53e498f3de6f8dec8c51, type: 2}
+  levelRequirement: 0
+  upgradeIcon: {fileID: -205314758, guid: e5ccda30a1b8ecb438025988e7e294ca, type: 3}

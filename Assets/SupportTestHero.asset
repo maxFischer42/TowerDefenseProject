@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f30ef077c524714b9a4024073f7833a, type: 3}
+  m_Name: SupportTestHero
+  m_EditorClassIdentifier: 
+  name: TestSupport
+  description: 
+  prefab: {fileID: 2105639993623973786, guid: 02f9919ff9311bd4a89d72a6f36cd681, type: 3}
+  baseHeroInfo:
+    hp: 5
+    mhp: 5
+    index: 5
+  cost: 5
+  damage: 1
+  mxp: 5
+  xpMult: 1.5
+  TowerIcon: {fileID: 496620861, guid: d21e60dcc3581234e8f2f5063f001eb5, type: 3}
+  DescriptionIcon: {fileID: 5643153735607284786, guid: 9888203ce4e953d41b85bb221c4589e1, type: 3}
+  isSuper: 0
+  isLightningRod: 0
+  upgradePath_1: {fileID: 11400000, guid: 8c1fd46c57ab99c438a4d3bb55eec078, type: 2}
+  upgradePath_2: {fileID: 0}
