@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cc19d4a89bfa4499e8bb7a48b4c750, type: 3}
   m_Name: AngeredSlime
   m_EditorClassIdentifier: 
-  health: 15
+  health: 12
   damage: 1
   damageToBase: 3
-  speed: 0.25
+  speed: 0.4
   isBoss: 0
   prize: 5
   dangerLevel: 2
@@ -58,5 +58,5 @@ MonoBehaviour:
     currentCooldown: 0
     timeRangeFromSpawn: {x: 0, y: 0}
     chance: 0
-    isOneTime: 0
+    isOneTime: 1
   objects: []

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cc19d4a89bfa4499e8bb7a48b4c750, type: 3}
   m_Name: SlimePrincess
   m_EditorClassIdentifier: 
-  health: 75
+  health: 500
   damage: 100
   damageToBase: 100
   speed: 0.12
@@ -95,6 +95,6 @@ MonoBehaviour:
     currentCooldown: 0
     timeRangeFromSpawn: {x: 2, y: 99999}
     chance: 90
-    isOneTime: 0
+    isOneTime: 1
   objects:
   - {fileID: 2105639993623973786, guid: 87ce3730e08231142808e2bf854300e4, type: 3}

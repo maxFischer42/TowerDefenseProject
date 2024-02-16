@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cc19d4a89bfa4499e8bb7a48b4c750, type: 3}
   m_Name: BotheredSlime
   m_EditorClassIdentifier: 
-  health: 15
+  health: 3
   damage: 1
-  damageToBase: 3
-  speed: 0.25
+  damageToBase: 2
+  speed: 1.5
   isBoss: 0
   prize: 5
   dangerLevel: 2

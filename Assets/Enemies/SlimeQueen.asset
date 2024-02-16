@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cc19d4a89bfa4499e8bb7a48b4c750, type: 3}
   m_Name: SlimeQueen
   m_EditorClassIdentifier: 
-  health: 100
+  health: 1200
   damage: 1
   damageToBase: 1
   speed: 0.25

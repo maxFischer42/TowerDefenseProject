@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cc19d4a89bfa4499e8bb7a48b4c750, type: 3}
   m_Name: RoyalSlime
   m_EditorClassIdentifier: 
-  health: 20
+  health: 60
   damage: 60
   damageToBase: 60
   speed: 0.2
@@ -31,7 +31,6 @@ MonoBehaviour:
       spawnEntitiesInfo:
         isEntity: 1
         spawnEntities:
-        - {fileID: 8156373381982439453, guid: 72c4318cdbec9894da926def7381dbf9, type: 3}
         - {fileID: 8156373381982439453, guid: 72c4318cdbec9894da926def7381dbf9, type: 3}
         - {fileID: 526550170585345675, guid: de98d9ba81bf43e4f8a71e6a542adcfd, type: 3}
         - {fileID: 526550170585345675, guid: 0bd2cb8b3fb0b8c4bb8e181dfe27d8b8, type: 3}
@@ -62,5 +61,5 @@ MonoBehaviour:
     currentCooldown: 0
     timeRangeFromSpawn: {x: 0, y: 0}
     chance: 0
-    isOneTime: 0
+    isOneTime: 1
   objects: []

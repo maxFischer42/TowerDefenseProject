@@ -50,6 +50,7 @@ public class HeroPosition : MonoBehaviour
     {
         path1 = h.upgradePath_1;
         path2 = h.upgradePath_2;
+        level = 1;
         xp = 0;
         hero = h;
         mxp = h.mxp;

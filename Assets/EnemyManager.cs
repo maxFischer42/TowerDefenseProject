@@ -50,6 +50,8 @@ public class EnemyManager : MonoBehaviour
 
     public bool enemyIsHidden = false;
 
+    private bool lockDeathEvent = false;
+
     void Start()
     {
         if(enemy == null)
@@ -300,6 +302,11 @@ public class EnemyManager : MonoBehaviour
         {
             return;
         }
+        if(lockDeathEvent)
+        {
+            return;
+        }
+        lockDeathEvent = true;
         Debug.Log("DeathEventProcessing...");
         // Perform actions here
         HandleAction(_event);
