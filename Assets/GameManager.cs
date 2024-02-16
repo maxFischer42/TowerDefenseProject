@@ -680,7 +680,7 @@ public class GameManager : MonoBehaviour
 
     public bool CanAfford(int value)
     {
-        if(currency - value < 0) return false;
+        if(currency - value <= 0) return false;
         return true;
     }
 
