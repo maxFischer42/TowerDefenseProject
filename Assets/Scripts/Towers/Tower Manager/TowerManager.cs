@@ -36,11 +36,23 @@ public class TowerManager : MonoBehaviour
 
     public bool isDead = false;
 
+    public bool isOnDisableCooldown = false;
+
     private void Start()
     {
         hp = maxHP;
         damage = myHero.damage;
         range = GetComponentInChildren<TowerRange>();
+    }
+
+    public void HandleIsOnDisableCooldown()
+    {
+        Invoke(nameof(EndCooldown), 5f);
+    }
+
+    public void EndCooldown()
+    {
+        isOnDisableCooldown = false;
     }
 
     public void UpdateHealth(int _change)

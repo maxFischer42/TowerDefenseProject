@@ -525,6 +525,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Enabling hero " + d.transform.GetChild(0).name);
             d.GetComponentInChildren<TowerManager>().enabled = true;
+            d.GetComponentInChildren<TowerManager>().HandleIsOnDisableCooldown();
             d.GetComponentInChildren<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         }
     }

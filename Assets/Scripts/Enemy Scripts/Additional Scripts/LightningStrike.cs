@@ -31,7 +31,7 @@ public class LightningStrike : MonoBehaviour
             }
             if(collision.GetComponent<TowerManager>().enabled)
             {
-                
+                if (collision.GetComponent<TowerManager>().isOnDisableCooldown) return;
                 collision.GetComponent<TowerManager>().enabled = false;
                 collision.GetComponentInChildren<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
                 List<HeroPosition> h = new List<HeroPosition>();
