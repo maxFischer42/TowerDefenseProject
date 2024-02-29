@@ -11,6 +11,11 @@ public class BaseSuperHeroScript : TowerManager
     public bool isDowned = false;
     public GameObject hitboxToSpawn;
 
+
+    public override void Start()
+    {
+        base.Start();
+    }
     public override void ManageHealthChanges()
     {
         if (!isDowned)

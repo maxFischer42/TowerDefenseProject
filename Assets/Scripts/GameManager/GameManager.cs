@@ -476,6 +476,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     public void RevertUpgrade(HeroPosition hero, Upgrade u)
     {
 
@@ -635,6 +636,11 @@ public class GameManager : MonoBehaviour
 
     public void ChangeHeroPriority(int direction)
     {
+        if(temporaryHeroDetail.isSupport)
+        {
+            ChangeSupportHeroPriority(direction);
+            return;
+        }
         target_priority p = temporaryHeroDetail.GetComponentInChildren<TowerManager>().priority;
         p += direction;
         if (p < 0) p = (target_priority)6;
@@ -664,6 +670,68 @@ public class GameManager : MonoBehaviour
             case target_priority.last:
                 priority_text.text = "Last Seen";
                 break;
+        }
+        temporaryHeroDetail.tower.OnPriorityChange();
+    }
+
+    public void ChangeSupportHeroPriority(int direction)
+    {
+        target_priority p = temporaryHeroDetail.GetComponentInChildren<TowerManager>().priority;
+        support_priority sp = targetToSupport(p);
+
+        sp += direction;
+        p = supportToTarget(sp);
+        temporaryHeroDetail.GetComponentInChildren<TowerManager>().priority = p;
+
+        switch (p)
+        {
+            case target_priority.highHP:
+                priority_text.text = "Highest Health First";
+                break;
+            case target_priority.lowHP:
+                priority_text.text = "Lowest Health First";
+                break;
+            case target_priority.first:
+                priority_text.text = "Closest";
+                break;
+            case target_priority.last:
+                priority_text.text = "Furthest";
+                break;
+        }
+        temporaryHeroDetail.tower.OnPriorityChange();
+    }
+
+    public support_priority targetToSupport(target_priority t)
+    {
+        switch(t)
+        {
+            case target_priority.highHP:
+                return support_priority.highHP;                
+            case target_priority.lowHP:
+                return support_priority.lowHP;
+            case target_priority.first:
+                return support_priority.closest;
+            case target_priority.last:
+                return support_priority.furthest;
+            default:
+                return support_priority.lowHP;
+        }
+    }
+
+    public target_priority supportToTarget(support_priority sp)
+    {
+        switch (sp)
+        {
+            case support_priority.highHP:
+                return target_priority.highHP;
+            case support_priority.lowHP:
+                return target_priority.lowHP;
+            case support_priority.closest:
+                return target_priority.first;
+            case support_priority.furthest:
+                return target_priority.last;
+            default:
+                return target_priority.lowHP;
         }
     }
 
@@ -741,6 +809,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
 
 }
 

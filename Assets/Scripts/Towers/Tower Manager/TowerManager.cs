@@ -38,11 +38,15 @@ public class TowerManager : MonoBehaviour
 
     public bool isOnDisableCooldown = false;
 
-    private void Start()
+    public HeroPosition pos;
+
+    public virtual void Start()
     {
         hp = maxHP;
         damage = myHero.damage;
+        pos = transform.parent.GetComponent<HeroPosition>();
         range = GetComponentInChildren<TowerRange>();
+        range.SetRadius(pos.rangeMod, true);
     }
 
     public void HandleIsOnDisableCooldown()
@@ -91,6 +95,7 @@ public class TowerManager : MonoBehaviour
         transform.parent.GetComponent<HeroPosition>().isPossessed = true;
         Destroy(this.gameObject);
     }
+
 
     public virtual void Update()
     {
@@ -170,7 +175,13 @@ public class TowerManager : MonoBehaviour
         isBeingPossessed = false;
     }
 
+    public virtual void OnPriorityChange()
+    {
+
+    }
+
 }
 
 
 public enum target_priority { highHP, lowHP, slowest, fastest, danger, first, last}
+public enum support_priority { highHP, lowHP, closest, furthest}

@@ -9,10 +9,29 @@ public class TowerRange : MonoBehaviour
     private TowerManager tower;
     public bool canSeeHidden = false;
     public bool canSeeFromSupport = false;
+    private CircleCollider2D cCollider;
 
     private void Start()
     {
+        cCollider = GetComponent<CircleCollider2D>();
         tower = transform.parent.GetComponent<TowerManager>();
+    }
+
+    public void SetRadius(float radius, bool isInitial)
+    {
+        //        while (!cCollider) { }  // TODO remove this and add some sort of asynchronous method
+        StartCoroutine(SetRadiusAsychronous(radius, isInitial));   
+    }
+
+    public IEnumerator SetRadiusAsychronous (float radius, bool isInitial)
+    {
+        while(!cCollider)
+        {
+            yield return new WaitForFixedUpdate();
+        }
+        float range = isInitial ? cCollider.radius : 0f;
+        range += radius;
+        cCollider.radius = range;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,6 +44,11 @@ public class TowerRange : MonoBehaviour
             }
             transformsInRange.Add(collision.transform);
             RefreshPriority();
+        }
+
+        if(collision.tag == "HERO_CHARACTER" && tower.myHero.isSupport)
+        {
+            collision.transform.parent.GetComponent<HeroPosition>().TryAddSupport(tower.pos);
         }
     }
 

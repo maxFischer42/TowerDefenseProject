@@ -17,6 +17,7 @@ public class HeroDefinition : ScriptableObject
     public Sprite DescriptionIcon;
     public bool isSuper = false;
     public bool isLightningRod = false;
+    public bool isSupport = false;
 
     public Upgrade upgradePath_1;
     public Upgrade upgradePath_2;

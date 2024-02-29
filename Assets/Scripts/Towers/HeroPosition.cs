@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class HeroPosition : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class HeroPosition : MonoBehaviour
     public GameObject spawnMod;
     public int damageMod;
     public bool pierceMod = false;
+    public float supportReachMod = 0f;
 
     public GameObject gainXpEffect;
     public GameObject levelUpEffect;
@@ -42,6 +44,8 @@ public class HeroPosition : MonoBehaviour
     public bool isSupport = false;
 
     public bool canPierceFromSupport = false;
+
+    public List<HeroPosition> listOfSupports = new List<HeroPosition>();
 
     // Archive of what nearby towers have recieved what support upgrades
     public Dictionary<Upgrade, List<HeroPosition>> myUpgradedTowers = new Dictionary<Upgrade, List<HeroPosition>>();
@@ -57,7 +61,34 @@ public class HeroPosition : MonoBehaviour
         sellprice = h.cost / 2;
         mxp_multiplier = h.xpMult;
         isLightningRod = h.isLightningRod;
+        isSupport = h.isSupport;
+        listOfSupports.Clear();
         tower = GetComponentInChildren<TowerManager>();
+    }
+
+    public bool HasSupport(HeroPosition p)
+    {
+        foreach(HeroPosition h in listOfSupports)
+        {
+            if(h == p)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    public void AddSupport(HeroPosition p)
+    {
+        listOfSupports.Add(p);
+    }
+
+
+    public void TryAddSupport(HeroPosition p)
+    {
+        if (!HasSupport(p) && p != this)
+        {
+            AddSupport(p);
+        }
     }
 
     public void GainXP(int _xp, int elim)
@@ -79,11 +110,23 @@ public class HeroPosition : MonoBehaviour
         {
             SpawnParticles(gainXpEffect);
         }
+        if(!isSupport)
+        {
+            foreach(HeroPosition s in listOfSupports)
+            {
+                // all units supporting this unit will recieve half of the xp this unit recieved (rounded up)
+                s.GainXP(Mathf.CeilToInt((float)_xp / 2), 1);
+            }
+        }
 
     }
 
     public void OnDeath()
     {
+        if(isSupport)
+        {
+            GameManager.Instance.heroManager.RemoveSupportOnDeath(this);
+        }
         foreach(Upgrade k in myUpgradedTowers.Keys)
         {
             foreach (HeroPosition h in myUpgradedTowers[k])

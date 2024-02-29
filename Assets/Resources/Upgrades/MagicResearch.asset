@@ -10,32 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac1c90f3739a7324bbfebdc52bd93842, type: 3}
-  m_Name: New Upgrade
+  m_Name: MagicResearch
   m_EditorClassIdentifier: 
-  isLockout: 0
+  isLockout: 1
   modifiers:
   - type: 0
-    fireRate: 3
-    range: 0
-    newHero: {fileID: 0}
-    newHeroHasPrefab: 0
-    newSpawn: {fileID: 0}
-    newPrefab: {fileID: 0}
-    dmg: 0
-  - type: 0
     fireRate: 0
-    range: 5
+    range: 3
     newHero: {fileID: 0}
     newHeroHasPrefab: 0
     newSpawn: {fileID: 0}
     newPrefab: {fileID: 0}
     dmg: 0
-  name: fireratetest
-  blurb: 
-  cost: 1
+  name: Magic Research
+  blurb: Research in healing magic, allows healing fields to be deployed to nearby
+    warrirors.
+  cost: 25
   isFinal: 0
   descendant: {fileID: 0}
   levelRequirement: 0
   upgradeIcon: {fileID: 0}
-  fieldUpgrade: 1
-  radiusForUpgrade: 5
+  fieldUpgrade: 0
+  radiusForUpgrade: 0

@@ -7,6 +7,11 @@ public class BasicShooterTower : TowerManager
     public GameObject projectileToShoot;
     public float shootSpeed = 1f;
 
+
+    public override void Start()
+    {
+        base.Start();
+    }
     public override void Update()
     {
         base.Update();

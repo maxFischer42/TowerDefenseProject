@@ -110,6 +110,65 @@ public class HeroManager : MonoBehaviour
         return hero;
     }
 
+    public HeroPosition GetHeroToDefend(Vector2 position, target_priority priority, float radius, HeroPosition current)
+    {
+        HeroPosition h = null;
+        float temp = 9999;
+        float temp_b = -1;
+        foreach(HeroPosition p in heroList)
+        {
+            if (!p.isPopulated || p.isPossessed) continue;
+            // First, check if this hero is within our radius
+            float dist = Vector2.Distance(p.transform.position, position);
+            if (dist > radius) continue;
+            if (p == current) continue;
+            // Hero is within our radius. Now, lets apply our priority settings to get the desired hero.
+            switch(priority)
+            {
+                case target_priority.first:
+                    if(temp > dist)
+                    {
+                        h = p;
+                        temp = dist;
+                    }
+                    break;
+                case target_priority.last:
+                    if(temp_b < dist)
+                    {
+                        h = p;
+                        temp_b = dist;
+                    }
+                    break;
+                case target_priority.lowHP:
+                    if(p.tower.hp < temp)
+                    {
+                        temp = p.tower.hp;
+                        h = p;
+                    }
+                    break;
+                case target_priority.highHP:
+                    if (p.tower.hp > temp_b)
+                    {
+                        temp_b = p.tower.hp;
+                        h = p;
+                    }
+                    break;
+            }
+        }
+        return h;
+    }
+
+
+    public void RemoveSupportOnDeath(HeroPosition p)
+    {
+        foreach(HeroPosition h in heroList)
+        {
+            if(h.HasSupport(p))
+            {
+                h.listOfSupports.Remove(p);
+            }
+        }
+    }
 }
 
 public enum priority { high, low }

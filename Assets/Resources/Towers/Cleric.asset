@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f30ef077c524714b9a4024073f7833a, type: 3}
-  m_Name: SupportTestHero
+  m_Name: Cleric
   m_EditorClassIdentifier: 
-  name: TestSupport
+  name: Cleric
   description: 
   prefab: {fileID: 2105639993623973786, guid: 02f9919ff9311bd4a89d72a6f36cd681, type: 3}
   baseHeroInfo:
@@ -27,5 +27,6 @@ MonoBehaviour:
   DescriptionIcon: {fileID: 5643153735607284786, guid: 9888203ce4e953d41b85bb221c4589e1, type: 3}
   isSuper: 0
   isLightningRod: 0
+  isSupport: 1
   upgradePath_1: {fileID: 11400000, guid: 8c1fd46c57ab99c438a4d3bb55eec078, type: 2}
   upgradePath_2: {fileID: 0}
