@@ -13,6 +13,7 @@ public class BasicHealingTower : TowerManager
     {
         base.Start();
         pos.spawnMod = healObjToSpawn;
+        OnPriorityChange();
     }
 
     public override void Update()
@@ -35,5 +36,15 @@ public class BasicHealingTower : TowerManager
             heroToDefend = GameManager.Instance.heroManager.GetHeroToDefend(transform.position, priority, baseSupportReach + pos.supportReachMod, pos);
         }
         base.DoAttack();
+    }
+
+    public override void HandleSupportProcess()
+    {
+        if (heroToDefend == null) return;
+        if(heroToDefend.tower.hp < heroToDefend.tower.maxHP)
+        {
+            DoAttack();
+        }
+        base.HandleSupportProcess();
     }
 }

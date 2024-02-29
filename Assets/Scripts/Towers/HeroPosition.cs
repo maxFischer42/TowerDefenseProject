@@ -47,6 +47,8 @@ public class HeroPosition : MonoBehaviour
 
     public List<HeroPosition> listOfSupports = new List<HeroPosition>();
 
+    private Color myColor;
+
     // Archive of what nearby towers have recieved what support upgrades
     public Dictionary<Upgrade, List<HeroPosition>> myUpgradedTowers = new Dictionary<Upgrade, List<HeroPosition>>();
 
@@ -64,6 +66,27 @@ public class HeroPosition : MonoBehaviour
         isSupport = h.isSupport;
         listOfSupports.Clear();
         tower = GetComponentInChildren<TowerManager>();
+    }
+
+    public bool isDisabled = false;
+
+    public void DisableForTime(float time)
+    {
+        if (tower.enabled == false || isDisabled) return;
+        myColor = GetComponentInChildren<SpriteRenderer>().color;
+        tower.enabled = false;
+        GetComponentInChildren<SpriteRenderer>().color = new Color(1, 1, 1, 0.3f);
+        isDisabled = true;
+        Invoke(nameof(ReEnableAfterTime), time);
+    }
+
+    public void ReEnableAfterTime()
+    {
+        isDisabled = false;
+        Debug.Log("Enabling hero " + transform.GetChild(0).name);
+        tower.enabled = true;
+        tower.HandleIsOnDisableCooldown();
+        GetComponentInChildren<SpriteRenderer>().color = myColor;
     }
 
     public bool HasSupport(HeroPosition p)

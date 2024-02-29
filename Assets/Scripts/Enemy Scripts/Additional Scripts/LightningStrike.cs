@@ -7,6 +7,12 @@ public class LightningStrike : MonoBehaviour
     public int chainStrength = 5;
     public float disableLength = 2f;
     public GameObject childToSpawn;
+
+    private void Start()
+    {
+        transform.localScale *= chainStrength;
+        Debug.Log("Scale: " + transform.localScale + " || Strength: " + chainStrength);
+    }
     // Start is called before the first frame update
     void Update()
     {
@@ -21,7 +27,7 @@ public class LightningStrike : MonoBehaviour
             d.GetComponentInChildren<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
         }
         GameManager.Instance.SetupReenable(disabledHeroes, _action.timeToDisable);*/
-
+        if (chainStrength <= 0) return;
         if(collision.tag == "HERO_CHARACTER")
         {
             if (collision.transform.GetComponentInParent<HeroPosition>().isLightningRod)
@@ -31,14 +37,11 @@ public class LightningStrike : MonoBehaviour
             }
             if(collision.GetComponent<TowerManager>().enabled)
             {
-                if (collision.GetComponent<TowerManager>().isOnDisableCooldown) return;
-                collision.GetComponent<TowerManager>().enabled = false;
-                collision.GetComponentInChildren<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
-                List<HeroPosition> h = new List<HeroPosition>();
-                h.Add(collision.transform.parent.GetComponent<HeroPosition>());
+                HeroPosition h = collision.transform.parent.GetComponent<HeroPosition>();
+                if (h.isDisabled) return;
                 GameManager.Instance.SetupReenable(h, disableLength);
                 GameObject strike = Instantiate(childToSpawn, collision.transform.position, Quaternion.identity);
-                strike.GetComponent<LightningStrike>().chainStrength -= 1;
+                strike.GetComponent<LightningStrike>().chainStrength = chainStrength - 1;
             }
         }
     }

@@ -511,24 +511,13 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void SetupReenable(List<HeroPosition> disabled, float timeToEnable)
+    public void SetupReenable(HeroPosition p, float timeToEnable)
     {
-        tempPositionsForDisable = disabled;
+        /*tempPositionsForDisable = disabled;
         Debug.Log("Temp Heroes Disasbled Length = " + tempPositionsForDisable.Count);
-        Debug.Log("Invoking ResetDisabledHeroes in GameManager");
-        Invoke(nameof(ResetDisabledHeroes), timeToEnable);
-    }
+        Debug.Log("Invoking ResetDisabledHeroes in GameManager");*/
 
-    void ResetDisabledHeroes()
-    {
-        Debug.Log("Invoke succeeded for ResetDisabledHeroes");
-        foreach (HeroPosition d in tempPositionsForDisable)
-        {
-            Debug.Log("Enabling hero " + d.transform.GetChild(0).name);
-            d.GetComponentInChildren<TowerManager>().enabled = true;
-            d.GetComponentInChildren<TowerManager>().HandleIsOnDisableCooldown();
-            d.GetComponentInChildren<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        }
+        p.DisableForTime(timeToEnable);
     }
 
     public void HealingFieldPlace()

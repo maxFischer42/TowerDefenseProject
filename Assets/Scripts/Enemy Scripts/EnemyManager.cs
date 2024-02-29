@@ -492,10 +492,8 @@ public class EnemyManager : MonoBehaviour
         }
         foreach(HeroPosition d in disabledHeroes)
         {
-            d.GetComponentInChildren<TowerManager>().enabled = false;
-            d.GetComponentInChildren<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
-        }
-        GameManager.Instance.SetupReenable(disabledHeroes, _action.timeToDisable);
+            GameManager.Instance.SetupReenable(d, _action.timeToDisable);
+        }        
     }
 
     void HandleAction_StopAndSummon(PassiveActionDefinition _action)

@@ -118,11 +118,19 @@ public class TowerManager : MonoBehaviour
         if (attackCooldown)
         {
             HandleAttackCooldown();
-        } else if(range.currentTarget != null)
+        } else if((!pos.isSupport && range.currentTarget != null))
         {
-            Debug.Log("Performing Hero Action");
+            //Debug.Log("Performing Hero Action");
             DoAttack();
+        } else if(pos.isSupport)
+        {
+            HandleSupportProcess();
         }
+    }
+
+    public virtual void HandleSupportProcess()
+    {
+
     }
 
     public virtual void SuperUpdate()
@@ -145,7 +153,7 @@ public class TowerManager : MonoBehaviour
         }
         else if (range.currentTarget != null)
         {
-            Debug.Log("Performing Hero Action");
+            //Debug.Log("Performing Hero Action");
             DoAttack();
         }
     }
