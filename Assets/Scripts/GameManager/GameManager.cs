@@ -308,7 +308,7 @@ public class GameManager : MonoBehaviour
 
         
         //check if it can be afforded
-        if (currency <= cost)
+        if (currency < cost)
         {
             Debug.Log("Upgrade too expensive | " + cost + " > " + currency);           
             return;
@@ -749,7 +749,7 @@ public class GameManager : MonoBehaviour
 
     public bool CanAfford(int value)
     {
-        if(currency - value <= 0) return false;
+        if(currency - value < 0) return false;
         return true;
     }
 
