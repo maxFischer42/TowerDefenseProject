@@ -8,6 +8,7 @@ TagManager:
   - PLAYER_PROJECTILE
   - STATUS_FIELD
   - HERO_CHARACTER
+  - PATH
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - UI
   - PLAYER_PROJ
   - ENEMY_PROJ
-  - 
-  - 
+  - PATH_COLL
+  - TOWER_COLL
   - 
   - 
   - 
