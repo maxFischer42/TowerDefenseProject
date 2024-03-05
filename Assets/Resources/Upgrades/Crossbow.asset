@@ -15,7 +15,7 @@ MonoBehaviour:
   isLockout: 0
   modifiers:
   - type: 0
-    fireRate: 0.5
+    fireRate: 0.02
     range: 0
     newHero: {fileID: 0}
     newHeroHasPrefab: 0
@@ -37,3 +37,5 @@ MonoBehaviour:
   descendant: {fileID: 11400000, guid: e5924a6f85b9c1c418c415f4f8b1d987, type: 2}
   levelRequirement: 9
   upgradeIcon: {fileID: -2111127902, guid: 2e01f3ececd894a4c94b8ca1b9fd3972, type: 3}
+  fieldUpgrade: 0
+  radiusForUpgrade: 2

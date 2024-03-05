@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3392913820843216268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5555519709255582879}
+  - component: {fileID: 2538905445741320971}
+  m_Layer: 0
+  m_Name: HeroPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5555519709255582879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3392913820843216268}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.05, y: 5.84, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2538905445741320971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3392913820843216268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a73dfa4a705b4848ae7e0e95209a763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPopulated: 0
+  hero: {fileID: 0}
+  tileId: 0
+  xp: 0
+  mxp: 0
+  mxp_multiplier: 1.5
+  level: 1
+  elims: 0
+  sellprice: 0
+  hp: 5
+  path1: {fileID: 0}
+  path2: {fileID: 0}
+  lockPath1: 0
+  lockPath2: 0
+  firerateMod: 0
+  rangeMod: 0
+  spawnMod: {fileID: 0}
+  damageMod: 0
+  pierceMod: 0
+  supportReachMod: 0
+  gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
+  levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
+  isPossessed: 0
+  tower: {fileID: 0}
+  isLightningRod: 0
+  isSupport: 0
+  canPierceFromSupport: 0
+  listOfSupports: []
+  canAttack: 1
+  isDisabled: 0

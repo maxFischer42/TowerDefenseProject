@@ -6,6 +6,7 @@ public class DieOnTimer : MonoBehaviour
 {
     public float timeToDie = 2f;
     public bool dieOnCollision = false;
+    public int pierceCount = 2;
 
     void Awake()
     {
@@ -21,7 +22,17 @@ public class DieOnTimer : MonoBehaviour
     {
         if(dieOnCollision && collision.gameObject.tag == "ENEMY")
         {
-            Destroy(gameObject);
+            Despawn();
+        } else if(dieOnCollision == false)
+        {
+            if(pierceCount > 0)
+            {
+                pierceCount--;
+            }
+            else
+            {
+                Despawn();
+            }
         }
     }
 

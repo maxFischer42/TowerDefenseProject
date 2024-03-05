@@ -37,7 +37,7 @@ public class TowerManager : MonoBehaviour
     public bool isDead = false;
 
     public bool isOnDisableCooldown = false;
-
+    public Animator anim;
     public HeroPosition pos;
 
     public virtual void Start()
@@ -47,6 +47,8 @@ public class TowerManager : MonoBehaviour
         pos = transform.parent.GetComponent<HeroPosition>();
         range = GetComponentInChildren<TowerRange>();
         range.SetRadius(pos.rangeMod, true);
+        anim = GetComponentInChildren<Animator>();
+        FaceTarget();
     }
 
     public void HandleIsOnDisableCooldown()
@@ -83,11 +85,26 @@ public class TowerManager : MonoBehaviour
         healthbar.rectTransform.sizeDelta = new Vector2((float)hp / (float)maxHP, 0.1f);
     }
 
+    public void FaceTarget()
+    {
+        if (range.currentTarget == null) return;
+        Transform t = range.currentTarget;
+        float distance = t.position.x - transform.position.x;
+        if(distance > 0)
+        {
+            GetComponentInChildren<SpriteRenderer>().flipX = true;
+        } else if(distance < 0)
+        {
+
+            GetComponentInChildren<SpriteRenderer>().flipX = false;
+        }
+    }
+
     public void DestroyTower()
     {
         transform.parent.GetComponent<HeroPosition>().isPopulated = false;
         transform.parent.GetComponent<HeroPosition>().OnDeath();
-        Destroy(this.gameObject);
+        Destroy(transform.parent.gameObject);
     }
 
     void PossessTower()
@@ -160,6 +177,7 @@ public class TowerManager : MonoBehaviour
 
     public virtual void DoAttack()
     {
+        FaceTarget();
         attackCooldown = true;
         currentCooldownTime = timeBetweenAttacks;
     }

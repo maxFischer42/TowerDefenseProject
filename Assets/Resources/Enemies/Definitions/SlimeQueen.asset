@@ -45,7 +45,7 @@ MonoBehaviour:
       attackAreaInfo:
         damage: 0
         radius: 0
-      timeToPossess: 8
+      timeToPossess: 0.2
       possessedTower: {fileID: 2105639993623973786, guid: 87ce3730e08231142808e2bf854300e4, type: 3}
       radius: 5
       timeToDisable: 3

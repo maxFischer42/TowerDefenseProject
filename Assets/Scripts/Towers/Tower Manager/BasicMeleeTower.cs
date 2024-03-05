@@ -26,11 +26,13 @@ public class BasicMeleeTower : TowerManager
         direction *= shootSpeed;
         GameObject proj = Instantiate(projectileToShoot, transform.position, Quaternion.identity);
         proj.GetComponent<Rigidbody2D>().velocity = direction;*/
-
+        anim.SetTrigger("ATTACK");
         Vector2 spawnPos = transform.position;     
         GameObject hit = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
-        hit.GetComponent<ProjectileInfo>().damage = damage;
+        hit.GetComponent<ProjectileInfo>().damage = damage + transform.parent.GetComponent<HeroPosition>().damageMod;
         hit.GetComponent<ProjectileInfo>().origin = transform.parent.GetComponent<HeroPosition>();
         base.DoAttack();
     }
+
+
 }

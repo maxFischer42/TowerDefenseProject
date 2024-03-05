@@ -14,7 +14,7 @@ public class HandlePuchaseCallback : MonoBehaviour
 
     public void OnSelectCallback()
     {
-        manager.OnPurchaseHandle(id);
+        //manager.OnPurchaseHandle(id);
     }
 
     public void OnHoverCallback()

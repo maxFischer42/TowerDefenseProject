@@ -413,8 +413,8 @@ public class GameManager : MonoBehaviour
                 case 2:     // Replace Hero Object
                     // replace hero object;
                     Destroy(hero.GetComponentInChildren<TowerManager>().gameObject);
-                    GameObject newObj = Instantiate(mod.newSpawn, hero.transform);
-                    newObj.GetComponent<TowerManager>().GetComponent<CircleCollider2D>().radius += hero.rangeMod;
+                    GameObject newObj = Instantiate(mod.newSpawn, hero.transform); 
+                    newObj.GetComponent<TowerManager>().range.GetComponent<CircleCollider2D>().radius += hero.rangeMod;
                     newObj.GetComponent<TowerManager>().timeBetweenAttacks -= hero.firerateMod;
                     newObj.GetComponent<TowerManager>().damage += hero.damageMod;
                     if (newObj.GetComponent<TowerManager>().timeBetweenAttacks < 0.05f)
@@ -472,6 +472,17 @@ public class GameManager : MonoBehaviour
                         hero.pierceMod = true;
                     }
                     break;
+                case 9:     // change if tower can access its attack
+                    if (isRevert && hero.canAttack)
+                    {
+                        hero.canAttack = false;
+                    }
+                    else if (!hero.canAttack)
+                    {
+                        hero.canAttack = true;
+                    }
+                    break;
+
             }
         }
     }
@@ -742,11 +753,19 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
+    public GameObject placeUnitObjects;
+
+    public void CancelUnitPurchase()
+    {
+        placeUnitObjects.SetActive(false);
+        PlaceUnitEnd();
+    }
+
     void PopulatePurchaseMenu()
     {
-        
+        placeUnitObjects.SetActive(true);
         PlaceUnitStart();
-        int id = 0;
+        /*        int id = 0;
         foreach(HeroPosition h in heroManager.heroList)
         {
             if (!h.isPopulated && !h.isPossessed)
@@ -757,18 +776,21 @@ public class GameManager : MonoBehaviour
                 purchaseObjects.Add(button);
             }
             id++;
-        }
+        }*/
     }
 
-    public void OnPurchaseHandle(int tileId)
+    public GameObject heroPosObj;
+
+    public void OnPurchaseHandle(/*int tileId*/ Vector2 _position)
     {
         // Spawn hero at position
-        heroManager.heroList[tileId].isPopulated = true;
+        //heroManager.heroList[tileId].isPopulated = true;
         HeroDefinition d = isSuper ? heroManager.super[pendingPurchase] : heroManager.heroes[pendingPurchase];
         GameObject v = d.prefab;
-        HeroPosition p = heroManager.heroList[tileId];
-        GameObject instanceObject = Instantiate(v, p.transform);
-        heroManager.heroList[tileId].Setup(d);
+        GameObject pO = Instantiate(heroPosObj, _position, Quaternion.identity);
+        GameObject instanceObject = Instantiate(v, pO.transform);
+        HeroPosition p = pO.GetComponent<HeroPosition>();
+        p.Setup(d);
         int cost = heroManager.heroes[pendingPurchase].cost;
         SpendCurrency(cost);
         // Refresh UI
@@ -777,7 +799,6 @@ public class GameManager : MonoBehaviour
             Destroy(h);
         }
         purchaseObjects.Clear();
-        PlaceUnitEnd();
 
         Vector2 position = instanceObject.transform.position;
         // Apply any support upgrades this tower should benefit from
@@ -797,6 +818,8 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+        CancelUnitPurchase();
+        heroManager.UpdateHeroList();
     }
 
 

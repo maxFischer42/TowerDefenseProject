@@ -5,6 +5,7 @@ using UnityEngine;
 public class PathwayDisplay : MonoBehaviour
 {
     public List<Vector2> waypoints = new List<Vector2>();
+    //public GeneratePointsForCollider pathCollisionGenerator;
     [HideInInspector] public int waypointCount;
     public float waypointWidth = 0.1f;
 
@@ -18,6 +19,7 @@ public class PathwayDisplay : MonoBehaviour
     void Start()
     {
         Transform[] children = transform.GetComponentsInChildren<Transform>();
+        //pathCollisionGenerator.SetPoints(waypoints);
         foreach (Transform child in children)
         {
             //print(child.name);

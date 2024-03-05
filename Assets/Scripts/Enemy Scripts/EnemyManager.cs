@@ -115,10 +115,17 @@ public class EnemyManager : MonoBehaviour
     void PossessUpdate()
     {
         if (!GetComponent<Pather>().arrivedAtPossessed) return;
-        if (heroToPossess && heroToPossess.transform.GetChild(0) && !heroToPossess.transform.GetChild(0).GetComponent<TowerManager>().possess_parent.activeInHierarchy)
+        if(heroToPossess.isPossessed)
+        {
+            isTryPossess = false;
+            return;
+        }
+        if (!heroToPossess.isPossessed && heroToPossess && heroToPossess.transform.GetChild(0) && !heroToPossess.transform.GetChild(0).GetComponent<TowerManager>().possess_parent.activeInHierarchy)
         {
             heroToPossess.transform.GetChild(0).GetComponent<TowerManager>().possess_parent.SetActive(true);
         }
+        heroToPossess.tower.isBeingPossessed = true;
+        possess_fill_temp.transform.parent.gameObject.SetActive(true);
         possessProgress -= Time.deltaTime;
         possess_fill_temp.fillAmount = 1 - (possessProgress / possess_length);
         if(possessProgress <= 0.0f)
@@ -132,6 +139,7 @@ public class EnemyManager : MonoBehaviour
                 int ind = Random.Range(0, myEnemy.objects.Count);
                 GameObject m = Instantiate(myEnemy.objects[ind], heroToPossess.transform);
                 isTryPossess = false;
+                heroToPossess.isPossessed = true;
                 minions.Add(m);
                 minionPositions.Add(heroToPossess);
                 heroToPossess = null;
@@ -329,7 +337,7 @@ public class EnemyManager : MonoBehaviour
     void HandleEvent_OnNearHero(EnemyPassiveActions _event)
     {
         intBool nearbyHero = GameManager.Instance.heroManager.getNearbyHero(transform.position, _event.condition_modifier);
-        //Debug.Log("NerbyheroResult: " + nearbyHero._int + "   :   " + nearbyHero._bool);
+        Debug.Log("NerbyheroResult: " + nearbyHero._int + "   :   " + nearbyHero._bool);
         if(nearbyHero._bool == true)
         {
             Debug.Log("OnNearHero");
@@ -464,7 +472,8 @@ public class EnemyManager : MonoBehaviour
     {
         GetComponent<Pather>().arrivedAtPossessed = false;
         intBool hero = GameManager.Instance.heroManager.getNearbyHero(transform.position, _action.radius);
-        if (hero._bool == false) return;
+        //if (hero._bool == false) return;
+        if (GameManager.Instance.heroManager.heroList[hero._int].isPossessed) return;
         if (GameManager.Instance.heroManager.heroList[hero._int].transform.childCount == 0) return; // somehow passed the first check, recheck with transform children
         isTryPossess = true;
         possessProgress = _action.timeToPossess;

@@ -182,6 +182,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -191,6 +192,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &69503703
 GameObject:
@@ -391,6 +393,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -400,6 +403,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &105802987
 GameObject:
@@ -763,7 +767,7 @@ MonoBehaviour:
   scrollObject: {fileID: 1601138609}
   unitMenuRect: {fileID: 358097494}
   heroMenuRect: {fileID: 1369042477}
-  unlockedTowers: 010101
+  unlockedTowers: 01010101
   unlockedHeroes: 01
   unitMenuObj: {fileID: 348305266}
   heroMenuObj: {fileID: 145773700}
@@ -786,6 +790,8 @@ MonoBehaviour:
   lockImage: {fileID: 21300000, guid: 8760d58eea3b881438e8ef654efa76b7, type: 3}
   healingFieldPlacement: {fileID: 1802987180}
   healingFieldObject: {fileID: 7979336329235958995, guid: 0d4048537c3446f40b7939237af0b4dd, type: 3}
+  placeUnitObjects: {fileID: 842329949}
+  heroPosObj: {fileID: 3392913820843216268, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
 --- !u!4 &148169865
 Transform:
   m_ObjectHideFlags: 0
@@ -864,6 +870,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -873,6 +880,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &168380930
 GameObject:
@@ -968,6 +976,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -977,6 +986,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &181334929
 GameObject:
@@ -1041,6 +1051,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -1050,6 +1061,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &219396428
 GameObject:
@@ -1281,6 +1293,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -1290,6 +1303,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &294606470
 GameObject:
@@ -1854,6 +1868,163 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387825338}
   m_CullTransparentMesh: 1
+--- !u!1 &392648625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 392648626}
+  - component: {fileID: 392648629}
+  - component: {fileID: 392648628}
+  - component: {fileID: 392648627}
+  - component: {fileID: 392648630}
+  - component: {fileID: 392648631}
+  m_Layer: 9
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &392648626
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392648625}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 558443186}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &392648627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392648625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd392fa98c192e4f94aa33e52c282ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCollidingBox: 0
+  img: {fileID: 392648628}
+--- !u!114 &392648628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392648625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 1951776989, guid: 083a626db070f2d4c8bda15e23387402, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &392648629
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392648625}
+  m_CullTransparentMesh: 1
+--- !u!58 &392648630
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392648625}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
+--- !u!114 &392648631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392648625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 392648627}
+          m_TargetAssemblyTypeName: LockToCursor, Assembly-CSharp
+          m_MethodName: TryClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &409827708
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2299,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -2137,6 +2309,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &443931173
 GameObject:
@@ -2232,6 +2405,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -2241,6 +2415,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &510861236
 GameObject:
@@ -2428,6 +2603,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -2437,6 +2613,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &551759705
 GameObject:
@@ -2537,6 +2714,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -2546,6 +2724,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &558327780
 GameObject:
@@ -2610,6 +2789,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -2619,7 +2799,110 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
+--- !u!1 &558443185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 558443186}
+  - component: {fileID: 558443189}
+  - component: {fileID: 558443188}
+  - component: {fileID: 558443187}
+  m_Layer: 0
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &558443186
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558443185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 392648626}
+  m_Father: {fileID: 842329950}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &558443187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558443185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &558443188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558443185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
+--- !u!223 &558443189
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558443185}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 519420031}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 2
+  m_TargetDisplay: 0
 --- !u!1 &573958372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2789,6 +3072,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -2798,6 +3082,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &624262260
 GameObject:
@@ -2862,6 +3147,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -2871,6 +3157,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &627306956
 GameObject:
@@ -2966,6 +3253,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -2975,6 +3263,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &659637651
 GameObject:
@@ -3039,6 +3328,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -3048,6 +3338,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &672707109
 GameObject:
@@ -3221,6 +3512,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -3230,6 +3522,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &765095621
 GameObject:
@@ -3472,6 +3765,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -3481,6 +3775,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &834027305
 GameObject:
@@ -3754,6 +4049,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835674038}
   m_CullTransparentMesh: 1
+--- !u!1 &842329949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 842329950}
+  m_Layer: 0
+  m_Name: UnitPlacementObjects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &842329950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842329949}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1624743319}
+  - {fileID: 558443186}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &846163062
 GameObject:
   m_ObjectHideFlags: 0
@@ -3967,6 +4295,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -3976,6 +4305,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &870372697
 GameObject:
@@ -4133,6 +4463,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -4142,6 +4473,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &948910376
 GameObject:
@@ -4206,6 +4538,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -4215,6 +4548,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &993435526
 GameObject:
@@ -4385,6 +4719,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -4394,6 +4729,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1024611539
 GameObject:
@@ -4430,6 +4766,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a1d6099ecf6c61f479007f31152299e9, type: 2}
   - {fileID: 11400000, guid: aa45157587bcf2c4ab4030b8002bf78b, type: 2}
   - {fileID: 11400000, guid: 09453aaac5cf4eb4191beee4320db540, type: 2}
+  - {fileID: 11400000, guid: f4ff7d57d65631d4babff23dae9a0885, type: 2}
   super:
   - {fileID: 11400000, guid: 532ac1e38bdd83a4aaa8b8ea7dabf01b, type: 2}
 --- !u!4 &1024611541
@@ -4677,6 +5014,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -4686,6 +5024,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1073399472
 GameObject:
@@ -5043,7 +5382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1175662067
 Transform:
   m_ObjectHideFlags: 0
@@ -7635,6 +7974,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -7644,6 +7984,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1201380350
 GameObject:
@@ -7994,7 +8335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1270308995
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8115,6 +8456,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -8124,6 +8466,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1286086013
 GameObject:
@@ -8250,6 +8593,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -8259,6 +8603,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1295570961
 GameObject:
@@ -8646,11 +8991,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paths: {fileID: 1629514897}
   phases:
-  - id_s: 000000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c0000000c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-    cooldown_between: 5
+  - id_s: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    cooldown_between: 4
   - id_s: 000000000000000000000000010000000100000000000000000000000200000002000000000000000000000002000000020000000100000001000000
     cooldown_between: 2
-  - id_s: 0000000000000000000000000000000000000000010000000100000001000000000000000000000000000000000000000000000000000000000000000100000001000000010000000000000000000000000000000000000001000000010000000f000000
+  - id_s: 0000000000000000000000000000000000000000010000000100000001000000050000000500000005000000000000000000000000000000000000000100000001000000010000000000000000000000000000000000000001000000010000000f000000
     cooldown_between: 2.5
   - id_s: 00000000000000000000000001000000010000000000000000000000000000000000000000000000010000000100000000000000000000000000000000000000020000000200000002000000000000000000000000000000000000000000000000000000000000000000000002000000020000000f000000
     cooldown_between: 1
@@ -8865,6 +9210,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -8874,6 +9220,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1527070833
 GameObject:
@@ -9074,6 +9421,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -9083,6 +9431,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1572692520
 GameObject:
@@ -9677,6 +10026,184 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1624743318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624743319}
+  - component: {fileID: 1624743321}
+  - component: {fileID: 1624743322}
+  m_Layer: 8
+  m_Name: PathCollisionObject
+  m_TagString: PATH
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1624743319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624743318}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 842329950}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1624743321
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624743318}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -4.65257, y: 0.8560593}
+      - {x: -4.6261935, y: 3.0183094}
+      - {x: -4.561623, y: 6.2904825}
+      - {x: -4.3314066, y: 6.669908}
+      - {x: -4.3379297, y: 2.9602616}
+      - {x: -4.3600335, y: 0.47402593}
+      - {x: -5.335371, y: 0.34944832}
+      - {x: -5.4147863, y: 0.081694126}
+      - {x: -5.456895, y: -1.5171549}
+      - {x: -6.368396, y: -1.7341964}
+      - {x: -6.3714004, y: -2.3338645}
+      - {x: -5.502666, y: -2.2918935}
+      - {x: -5.468727, y: -3.4069455}
+      - {x: -2.8618026, y: -3.3640165}
+      - {x: -2.6092024, y: -3.0605652}
+      - {x: -2.6159084, y: -2.4404626}
+      - {x: -1.8210052, y: -2.3239176}
+      - {x: -1.5928771, y: -2.1076806}
+      - {x: -1.5592449, y: -1.4441018}
+      - {x: -0.7682574, y: -1.289268}
+      - {x: -0.66497594, y: -0.9445959}
+      - {x: -0.694139, y: 2.3826046}
+      - {x: -0.4678836, y: 2.6490326}
+      - {x: 0.2888957, y: 2.7204945}
+      - {x: 0.47454128, y: 3.5740166}
+      - {x: 5.528271, y: 3.680533}
+      - {x: 5.635582, y: 2.7320416}
+      - {x: 7.5703917, y: 2.632954}
+      - {x: 7.593369, y: -0.5299948}
+      - {x: 7.10958, y: -0.57703906}
+      - {x: 6.535079, y: -0.6951114}
+      - {x: 6.4787545, y: -1.610523}
+      - {x: 5.5528545, y: -1.6720823}
+      - {x: 5.6069016, y: -2.2618484}
+      - {x: 6.0569725, y: -2.3802283}
+      - {x: 7.341013, y: -2.221012}
+      - {x: 7.677574, y: -2.4833708}
+      - {x: 7.6600976, y: -6.1445026}
+      - {x: 7.928637, y: -6.1445026}
+      - {x: 7.3489823, y: -6.157755}
+      - {x: 7.2187047, y: -2.6504974}
+      - {x: 5.8527904, y: -2.6797657}
+      - {x: 5.3888016, y: -2.3563237}
+      - {x: 5.3290205, y: -1.3319001}
+      - {x: 6.053256, y: -1.4107838}
+      - {x: 6.379919, y: -1.1619072}
+      - {x: 6.334626, y: -0.34498507}
+      - {x: 7.1537533, y: -0.341688}
+      - {x: 7.4503355, y: -0.047582686}
+      - {x: 7.3691664, y: 2.4962435}
+      - {x: 5.5898557, y: 2.3518753}
+      - {x: 5.384774, y: 2.861349}
+      - {x: 5.3268213, y: 3.4342382}
+      - {x: 0.656227, y: 3.3841217}
+      - {x: 0.55971396, y: 2.4659073}
+      - {x: -0.3359716, y: 2.3513706}
+      - {x: -0.3305945, y: 1.3731233}
+      - {x: -0.38881922, y: -0.6880051}
+      - {x: -0.5154487, y: -1.5698199}
+      - {x: -1.3972728, y: -1.6227605}
+      - {x: -1.4490011, y: -2.4869564}
+      - {x: -2.4408174, y: -2.72218}
+      - {x: -2.4634917, y: -3.596414}
+      - {x: -5.1155167, y: -3.6411977}
+      - {x: -5.6860957, y: -3.4830847}
+      - {x: -5.6791534, y: -2.5847316}
+      - {x: -6.263435, y: -2.748773}
+      - {x: -6.6114197, y: -2.4157243}
+      - {x: -6.6857095, y: -1.5037134}
+      - {x: -5.6396384, y: -1.1630611}
+      - {x: -5.627364, y: 0.49405622}
+  m_UseDelaunayMesh: 0
+--- !u!50 &1624743322
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624743318}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1628759399
 GameObject:
   m_ObjectHideFlags: 0
@@ -9740,6 +10267,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -9749,6 +10277,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1629514895
 GameObject:
@@ -10023,6 +10552,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -10032,6 +10562,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1669132609
 GameObject:
@@ -10096,6 +10627,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -10105,6 +10637,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1670488965
 GameObject:
@@ -10169,6 +10702,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -10178,6 +10712,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1689405315
 GameObject:
@@ -10242,6 +10777,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -10251,6 +10787,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1697217344
 GameObject:
@@ -10637,6 +11174,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -10646,6 +11184,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1773846942
 GameObject:
@@ -10710,6 +11249,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -10719,6 +11259,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1802987180
 GameObject:
@@ -10819,6 +11360,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -10828,6 +11370,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1834832735
 GameObject:
@@ -10844,7 +11387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1834832736
 Transform:
   m_ObjectHideFlags: 0
@@ -11066,6 +11609,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -11075,6 +11619,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1878679988
 GameObject:
@@ -11878,6 +12423,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -11887,6 +12433,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &1930893620
 GameObject:
@@ -12295,6 +12842,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -12304,6 +12852,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &2010278269
 GameObject:
@@ -12368,6 +12917,7 @@ MonoBehaviour:
   spawnMod: {fileID: 0}
   damageMod: 0
   pierceMod: 0
+  numPierceMod: 0
   supportReachMod: 0
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
@@ -12377,6 +12927,7 @@ MonoBehaviour:
   isSupport: 0
   canPierceFromSupport: 0
   listOfSupports: []
+  canAttack: 1
   isDisabled: 0
 --- !u!1 &2011494460
 GameObject:
@@ -12456,7 +13007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!156049354 &2035823590
 Grid:
   m_ObjectHideFlags: 0
@@ -12486,79 +13037,11 @@ Transform:
   - {fileID: 1175662067}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2063434280
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2063434281}
-  - component: {fileID: 2063434282}
-  m_Layer: 0
-  m_Name: HeroPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2063434281
+--- !u!4 &2063434281 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
+  m_PrefabInstance: {fileID: 2307295858798021331}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063434280}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.05, y: 5.84, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1834832736}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2063434282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063434280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a73dfa4a705b4848ae7e0e95209a763, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPopulated: 0
-  hero: {fileID: 0}
-  tileId: 0
-  xp: 0
-  mxp: 0
-  mxp_multiplier: 1.5
-  level: 1
-  elims: 0
-  sellprice: 0
-  hp: 5
-  path1: {fileID: 0}
-  path2: {fileID: 0}
-  lockPath1: 0
-  lockPath2: 0
-  firerateMod: 0
-  rangeMod: 0
-  spawnMod: {fileID: 0}
-  damageMod: 0
-  pierceMod: 0
-  supportReachMod: 0
-  gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
-  levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
-  isPossessed: 0
-  tower: {fileID: 0}
-  isLightningRod: 0
-  isSupport: 0
-  canPierceFromSupport: 0
-  listOfSupports: []
-  isDisabled: 0
 --- !u!1 &2130706114
 GameObject:
   m_ObjectHideFlags: 0
@@ -12679,6 +13162,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &2307295858798021331
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1834832736}
+    m_Modifications:
+    - target: {fileID: 3392913820843216268, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
+      propertyPath: m_Name
+      value: HeroPos
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
 --- !u!1 &2851853864010178521
 GameObject:
   m_ObjectHideFlags: 0
@@ -12963,3 +13503,4 @@ SceneRoots:
   - {fileID: 148169865}
   - {fileID: 1834832736}
   - {fileID: 2035823591}
+  - {fileID: 842329950}

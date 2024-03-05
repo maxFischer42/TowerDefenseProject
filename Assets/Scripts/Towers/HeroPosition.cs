@@ -30,6 +30,7 @@ public class HeroPosition : MonoBehaviour
     public GameObject spawnMod;
     public int damageMod;
     public bool pierceMod = false;
+    public int numPierceMod = 0;
     public float supportReachMod = 0f;
 
     public GameObject gainXpEffect;
@@ -48,6 +49,8 @@ public class HeroPosition : MonoBehaviour
     public List<HeroPosition> listOfSupports = new List<HeroPosition>();
 
     private Color myColor;
+
+    public bool canAttack = true;
 
     // Archive of what nearby towers have recieved what support upgrades
     public Dictionary<Upgrade, List<HeroPosition>> myUpgradedTowers = new Dictionary<Upgrade, List<HeroPosition>>();
@@ -72,6 +75,7 @@ public class HeroPosition : MonoBehaviour
 
     public void DisableForTime(float time)
     {
+        if (!tower) return;
         if (tower.enabled == false || isDisabled) return;
         myColor = GetComponentInChildren<SpriteRenderer>().color;
         tower.enabled = false;
@@ -116,7 +120,7 @@ public class HeroPosition : MonoBehaviour
 
     public void GainXP(int _xp, int elim)
     {
-        if (!isPopulated) return;
+        //if (!isPopulated) return;
         xp += _xp;
         
         if (xp > mxp)

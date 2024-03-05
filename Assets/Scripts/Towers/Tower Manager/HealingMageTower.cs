@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicHealingTower : TowerManager
+public class HealingMageTower : TowerManager
 {
-
     public GameObject healObjToSpawn;
     public HeroPosition heroToDefend;
     public float baseSupportReach = 3f;
+    public bool canSupport = true;
+    public float timeBetweenSupport = 5f;
 
     public override void Start()
     {
@@ -27,22 +28,35 @@ public class BasicHealingTower : TowerManager
         base.OnPriorityChange();
     }
 
+    public void ResetCanSupport()
+    {
+        canSupport = true;
+    }
 
     public override void DoAttack()
     {
-        if (!pos.canAttack) return;
-        if(heroToDefend != null)
+        if (heroToDefend != null && canSupport)
         {
             GameObject v = Instantiate(pos.spawnMod, heroToDefend.transform.position, Quaternion.identity);
             heroToDefend = GameManager.Instance.heroManager.GetHeroToDefend(transform.position, priority, baseSupportReach + pos.supportReachMod, pos);
+            canSupport = false;
+            Invoke(nameof(ResetCanSupport), 5f);
         }
-        base.DoAttack();
+
+        if (range.transformsInRange.Count > 0)
+        {
+            Vector2 spawnPos = transform.position;
+            GameObject hit = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
+            hit.GetComponent<ProjectileInfo>().damage = damage + transform.parent.GetComponent<HeroPosition>().damageMod;
+            hit.GetComponent<ProjectileInfo>().origin = transform.parent.GetComponent<HeroPosition>();
+            base.DoAttack();
+        }
     }
 
     public override void HandleSupportProcess()
     {
         if (heroToDefend == null) return;
-        if(heroToDefend.tower.hp < heroToDefend.tower.maxHP)
+        if (heroToDefend.tower.hp < heroToDefend.tower.maxHP)
         {
             DoAttack();
         }

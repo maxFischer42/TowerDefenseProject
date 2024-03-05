@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -97,17 +98,22 @@ public class HeroManager : MonoBehaviour
         float range = 99999f;
         foreach(var h in heroList)
         {
-            if (!h.isPopulated) continue;
+            //if (!h.isPopulated) continue;
             float dis = (position - (Vector2)h.transform.position).magnitude;
+            //print(dis + "  " + radius);
             if(dis <= radius)
             {
-                print(dis + "  " + radius);
                 range = radius;
-                hero._bool = h.isPopulated;
+                hero._bool = true;
                 hero._int = h.tileId;
             }
         }
         return hero;
+    }
+
+    public void UpdateHeroList()
+    {
+        heroList = GameObject.FindObjectsByType<HeroPosition>(FindObjectsSortMode.InstanceID).ToList<HeroPosition>();
     }
 
     public HeroPosition GetHeroToDefend(Vector2 position, target_priority priority, float radius, HeroPosition current)

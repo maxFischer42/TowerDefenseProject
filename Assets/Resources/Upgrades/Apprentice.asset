@@ -10,25 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac1c90f3739a7324bbfebdc52bd93842, type: 3}
-  m_Name: MagicResearch
+  m_Name: Apprentice
   m_EditorClassIdentifier: 
-  isLockout: 1
+  isLockout: 0
   modifiers:
-  - type: 9
+  - type: 2
     fireRate: 0
     range: 0
-    newHero: {fileID: 0}
+    newHero: {fileID: 11400000, guid: f4ff7d57d65631d4babff23dae9a0885, type: 2}
     newHeroHasPrefab: 0
-    newSpawn: {fileID: 0}
+    newSpawn: {fileID: 2105639993623973786, guid: a914faf1a284ed3438441f579d1c81f6, type: 3}
     newPrefab: {fileID: 0}
     dmg: 0
-  name: Magic Research
-  blurb: Research in healing magic, allows healing fields to be deployed to nearby
-    warrirors.
-  cost: 25
-  isFinal: 0
-  descendant: {fileID: 11400000, guid: 324fdf013fbb3c743b7ce4fa3eb7812a, type: 2}
-  levelRequirement: 12
+  name: Apprenticeship
+  blurb: Become a Healing Mage
+  cost: 50
+  isFinal: 1
+  descendant: {fileID: 0}
+  levelRequirement: 0
   upgradeIcon: {fileID: 0}
   fieldUpgrade: 0
-  radiusForUpgrade: 0
+  radiusForUpgrade: 2
