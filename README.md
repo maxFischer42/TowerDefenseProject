@@ -4,6 +4,8 @@ This repository holds the base for my Tower Defense Project; my own take on a on
 
 Based on games such as the Bloons TD series and Pokemon Tower Defense, this Tower Defense Game aims to recreate the kind of tower defense games that were popular in the early 2010s. 
 
+This game is primarily built utilizing C# and the Unity game engine.
+
 ## Gameplay
 ### Warriors, Heroes and Upgrades
 When starting a session, the player will begin with a set amount of money. This money can be used to purchase a "Warrior", "Warrior Upgrade", or a "Field Enhancement". Warriors are the "towers" of this game, characters that serve specific purposes to fend off enemies. Warriors come in all sorts of forms and can gain different attributes when Warrior Upgrades are purchased. Warrior Upgrades can be purchased when selecting a Warrior that has already been bought. Warrior upgrades are unlocked per warrior at specific level intervals that are specific to each warrior. 
