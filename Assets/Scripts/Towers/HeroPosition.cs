@@ -32,6 +32,7 @@ public class HeroPosition : MonoBehaviour
     public bool pierceMod = false;
     public int numPierceMod = 0;
     public float supportReachMod = 0f;
+    public RuntimeAnimatorController subAnimMod;
 
     public GameObject gainXpEffect;
     public GameObject levelUpEffect;

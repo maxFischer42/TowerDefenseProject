@@ -12,6 +12,7 @@ public class BasicShooterTower : TowerManager
     public Animator bowObjectAnimator;
 
 
+
     public override void Start()
     {
         base.Start();
@@ -20,6 +21,12 @@ public class BasicShooterTower : TowerManager
     {
         base.Update();
     }
+
+    public virtual void ApplySubObjectAction()
+    {
+        subObject.GetComponent<Animator>().runtimeAnimatorController = pos.subAnimMod;
+    }
+
     public override void DoAttack() {
         
         Vector3 targetPos = range.currentTarget.position;

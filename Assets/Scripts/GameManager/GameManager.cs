@@ -308,6 +308,7 @@ public class GameManager : MonoBehaviour
 
         
         //check if it can be afforded
+        // TODO swap with CanAfford function
         if (currency < cost)
         {
             Debug.Log("Upgrade too expensive | " + cost + " > " + currency);           
@@ -481,6 +482,13 @@ public class GameManager : MonoBehaviour
                     {
                         hero.canAttack = true;
                     }
+                    break;
+                case 10:    // change tower's weapon graphics
+                    hero.subAnimMod = mod.newSubAnimation;
+                    hero.tower.ApplySubObjectAction();
+                    break;
+                case 11:    // increase pierce modifier
+                    hero.numPierceMod += mod.pierceNum;
                     break;
 
             }

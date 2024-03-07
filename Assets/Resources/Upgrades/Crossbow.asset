@@ -22,6 +22,8 @@ MonoBehaviour:
     newSpawn: {fileID: 0}
     newPrefab: {fileID: 0}
     dmg: 0
+    newSubAnimation: {fileID: 0}
+    pierceNum: 0
   - type: 4
     fireRate: 0.5
     range: 0
@@ -30,6 +32,18 @@ MonoBehaviour:
     newSpawn: {fileID: 0}
     newPrefab: {fileID: 0}
     dmg: 2
+    newSubAnimation: {fileID: 0}
+    pierceNum: 0
+  - type: 10
+    fireRate: 0
+    range: 0
+    newHero: {fileID: 0}
+    newHeroHasPrefab: 0
+    newSpawn: {fileID: 0}
+    newPrefab: {fileID: 0}
+    dmg: 2
+    newSubAnimation: {fileID: 9100000, guid: c29f281be62db094e804dda0ed4818c7, type: 2}
+    pierceNum: 0
   name: Crossbows
   blurb: Replaces the archer's bow with a crossbow. Increases fire rate and damage.
   cost: 75

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -8350854563055107117}
   - component: {fileID: 4031985286459217498}
   m_Layer: 0
-  m_Name: MeleeTower
+  m_Name: VillagerTower
   m_TagString: HERO_CHARACTER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,6 +67,7 @@ MonoBehaviour:
   isOnDisableCooldown: 0
   anim: {fileID: 0}
   pos: {fileID: 0}
+  subObject: {fileID: 0}
   hitboxToSpawn: {fileID: 7696379311300158588, guid: 379bd075d7e8dfd47bf42bda1b1daf83, type: 3}
 --- !u!61 &4031985286459217498
 BoxCollider2D:

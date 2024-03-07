@@ -40,6 +40,15 @@ public class TowerManager : MonoBehaviour
     public Animator anim;
     public HeroPosition pos;
 
+
+    public Transform subObject;
+
+    public virtual void ApplySubObjectAction()
+    {
+        if (subObject == null) return;
+        subObject.GetComponent<Animator>().runtimeAnimatorController = pos.subAnimMod;
+    }
+
     public virtual void Start()
     {
         hp = maxHP;

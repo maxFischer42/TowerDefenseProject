@@ -289,6 +289,7 @@ MonoBehaviour:
   isOnDisableCooldown: 0
   anim: {fileID: 0}
   pos: {fileID: 0}
+  subObject: {fileID: 7167660761364245959}
   projectileToShoot: {fileID: 2442406529774744235, guid: c9dd1c56f84904249a6f08f7f7a201a9, type: 3}
   shootSpeed: 5
   bowObjectTransform: {fileID: 7167660761364245959}

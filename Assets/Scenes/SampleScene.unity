@@ -184,6 +184,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -395,6 +396,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -761,7 +763,7 @@ MonoBehaviour:
   unit_name: {fileID: 1527070835}
   unit_level: {fileID: 294606472}
   unit_experience: {fileID: 835674040}
-  currency: 10
+  currency: 500
   health: 100
   unitMenuButtonTemplate: {fileID: 222390327707700702, guid: 717ee1d9abdaba2448bc011e5812d955, type: 3}
   scrollObject: {fileID: 1601138609}
@@ -872,6 +874,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -978,6 +981,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -1053,6 +1057,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -1295,6 +1300,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -2301,6 +2307,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -2407,6 +2414,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -2605,6 +2613,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -2716,6 +2725,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -2791,6 +2801,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -3074,6 +3085,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -3149,6 +3161,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -3255,6 +3268,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -3330,6 +3344,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -3514,6 +3529,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -3767,6 +3783,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -4297,6 +4314,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -4465,6 +4483,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -4540,6 +4559,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -4721,6 +4741,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -5016,6 +5037,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -7976,6 +7998,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -8458,6 +8481,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -8595,6 +8619,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -9212,6 +9237,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -9423,6 +9449,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -10269,6 +10296,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -10554,6 +10582,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -10629,6 +10658,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -10704,6 +10734,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -10779,6 +10810,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -11176,6 +11208,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -11251,6 +11284,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -11362,6 +11396,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -11401,7 +11436,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2063434281}
   - {fileID: 1773846943}
   - {fileID: 179789038}
   - {fileID: 526433699}
@@ -11611,6 +11645,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -12425,6 +12460,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -12844,6 +12880,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -12919,6 +12956,7 @@ MonoBehaviour:
   pierceMod: 0
   numPierceMod: 0
   supportReachMod: 0
+  subAnimMod: {fileID: 0}
   gainXpEffect: {fileID: 8849502760483764977, guid: 738ce06b58248f0499a3e6d2c3755925, type: 3}
   levelUpEffect: {fileID: 5437670511821234153, guid: 10aa9fd2ff76ece439b17f63d151035d, type: 3}
   isPossessed: 0
@@ -13037,11 +13075,6 @@ Transform:
   - {fileID: 1175662067}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2063434281 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
-  m_PrefabInstance: {fileID: 2307295858798021331}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2130706114
 GameObject:
   m_ObjectHideFlags: 0
@@ -13162,63 +13195,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &2307295858798021331
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1834832736}
-    m_Modifications:
-    - target: {fileID: 3392913820843216268, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
-      propertyPath: m_Name
-      value: HeroPos
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555519709255582879, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: da7e3b279c96a6740a228cddea733f40, type: 3}
 --- !u!1 &2851853864010178521
 GameObject:
   m_ObjectHideFlags: 0

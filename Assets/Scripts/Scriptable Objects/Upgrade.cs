@@ -29,4 +29,6 @@ public class HeroModify
     public GameObject newSpawn;
     public GameObject newPrefab;
     public int dmg = 0;
+    public RuntimeAnimatorController newSubAnimation;
+    public int pierceNum = 0;
 }
