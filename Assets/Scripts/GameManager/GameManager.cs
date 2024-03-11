@@ -415,9 +415,14 @@ public class GameManager : MonoBehaviour
                     // replace hero object;
                     Destroy(hero.GetComponentInChildren<TowerManager>().gameObject);
                     GameObject newObj = Instantiate(mod.newSpawn, hero.transform); 
-                    newObj.GetComponent<TowerManager>().range.GetComponent<CircleCollider2D>().radius += hero.rangeMod;
+                    newObj.GetComponentInChildren<CircleCollider2D>().radius += hero.rangeMod;
                     newObj.GetComponent<TowerManager>().timeBetweenAttacks -= hero.firerateMod;
                     newObj.GetComponent<TowerManager>().damage += hero.damageMod;
+                    hero.tower = newObj.GetComponent<TowerManager>();
+                    hero.path1 = mod.newHero.upgradePath_1;
+                    hero.path2 = mod.newHero.upgradePath_2;
+                    hero.lockPath1 = false;
+                    hero.lockPath2 = false;
                     if (newObj.GetComponent<TowerManager>().timeBetweenAttacks < 0.05f)
                     {
                         newObj.GetComponent<TowerManager>().timeBetweenAttacks = 0.05f;
@@ -446,6 +451,7 @@ public class GameManager : MonoBehaviour
                     break;
                 case 5:     // Change if tower can pierce
                     hero.pierceMod = true;
+                    hero.numPierceMod += mod.pierceNum;
                     break;
                 case 6:     // Change if tower can see from support
                     if (isRevert && hero.GetComponentInChildren<TowerRange>().canSeeFromSupport)
@@ -471,6 +477,7 @@ public class GameManager : MonoBehaviour
                     {
                         hero.canPierceFromSupport = true;
                         hero.pierceMod = true;
+                        hero.numPierceMod += mod.pierceNum;
                     }
                     break;
                 case 9:     // change if tower can access its attack
@@ -490,6 +497,12 @@ public class GameManager : MonoBehaviour
                 case 11:    // increase pierce modifier
                     hero.numPierceMod += mod.pierceNum;
                     break;
+                case 12:    // blessed blade and blessed blade counter
+                    hero.tower.SetBlessedBlade(mod.blessedBladeCount);
+                    break;
+                case 13:
+                    hero.altAttackUnlocked = true;
+                    break;
 
             }
         }
@@ -498,7 +511,7 @@ public class GameManager : MonoBehaviour
 
     public void RevertUpgrade(HeroPosition hero, Upgrade u)
     {
-
+        HandleUpgradeModifiers(u, hero, true);
     }
 
     private int pendingPurchase = 0;

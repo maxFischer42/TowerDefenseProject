@@ -40,6 +40,8 @@ public class TowerManager : MonoBehaviour
     public Animator anim;
     public HeroPosition pos;
 
+    public Transform GFX_Obj;
+    
 
     public Transform subObject;
 
@@ -58,6 +60,23 @@ public class TowerManager : MonoBehaviour
         range.SetRadius(pos.rangeMod, true);
         anim = GetComponentInChildren<Animator>();
         FaceTarget();
+    }
+
+    int blessedBladeCount = 0;
+    public void HandleBlessedBlade() // exclusive to slasher class and subclasses
+    {
+        blessedBladeCount++;
+        if(blessedBladeCount >= pos.blessedBladeCount)
+        {
+            blessedBladeCount = 0;
+            UpdateHealth(-1);
+        }
+    }
+
+    public void SetBlessedBlade(int newCount)
+    {
+        pos.hasBlessedBlade = true;
+        pos.blessedBladeCount = newCount;
     }
 
     public void HandleIsOnDisableCooldown()
@@ -101,11 +120,13 @@ public class TowerManager : MonoBehaviour
         float distance = t.position.x - transform.position.x;
         if(distance > 0)
         {
-            GetComponentInChildren<SpriteRenderer>().flipX = true;
+            //GetComponentInChildren<SpriteRenderer>().flipX = true;
+            GFX_Obj.transform.localScale = new Vector3(-1, 1, 1);
         } else if(distance < 0)
         {
 
-            GetComponentInChildren<SpriteRenderer>().flipX = false;
+            //GetComponentInChildren<SpriteRenderer>().flipX = false;
+            GFX_Obj.transform.localScale = new Vector3(1, 1, 1);
         }
     }
 

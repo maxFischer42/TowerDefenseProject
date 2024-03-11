@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1c90f3739a7324bbfebdc52bd93842, type: 3}
+  m_Name: RangeFinder
+  m_EditorClassIdentifier: 
+  isLockout: 0
+  modifiers:
+  - type: 1
+    fireRate: 0
+    range: 0.15
+    newHero: {fileID: 0}
+    newHeroHasPrefab: 0
+    newSpawn: {fileID: 0}
+    newPrefab: {fileID: 0}
+    dmg: 0
+    newSubAnimation: {fileID: 0}
+    pierceNum: 0
+  name: Range Finder
+  blurb: Villager learns about perspective and distance. Increases attack range.
+  cost: 10
+  isFinal: 0
+  descendant: {fileID: 11400000, guid: 0286c49a901a8c34c853bf5e9e5ecc92, type: 2}
+  levelRequirement: 1
+  upgradeIcon: {fileID: 0}
+  fieldUpgrade: 0
+  radiusForUpgrade: 2

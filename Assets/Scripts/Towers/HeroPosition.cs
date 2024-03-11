@@ -53,6 +53,10 @@ public class HeroPosition : MonoBehaviour
 
     public bool canAttack = true;
 
+    public bool hasBlessedBlade;
+    public int blessedBladeCount = 0;
+    public bool altAttackUnlocked = false;
+
     // Archive of what nearby towers have recieved what support upgrades
     public Dictionary<Upgrade, List<HeroPosition>> myUpgradedTowers = new Dictionary<Upgrade, List<HeroPosition>>();
 
@@ -78,9 +82,9 @@ public class HeroPosition : MonoBehaviour
     {
         if (!tower) return;
         if (tower.enabled == false || isDisabled) return;
-        myColor = GetComponentInChildren<SpriteRenderer>().color;
+        //myColor = GetComponentInChildren<SpriteRenderer>().color;
         tower.enabled = false;
-        GetComponentInChildren<SpriteRenderer>().color = new Color(1, 1, 1, 0.3f);
+        //GetComponentInChildren<SpriteRenderer>().color = new Color(1, 1, 1, 0.3f);
         isDisabled = true;
         Invoke(nameof(ReEnableAfterTime), time);
     }
@@ -91,7 +95,7 @@ public class HeroPosition : MonoBehaviour
         Debug.Log("Enabling hero " + transform.GetChild(0).name);
         tower.enabled = true;
         tower.HandleIsOnDisableCooldown();
-        GetComponentInChildren<SpriteRenderer>().color = myColor;
+        //GetComponentInChildren<SpriteRenderer>().color = myColor;
     }
 
     public bool HasSupport(HeroPosition p)

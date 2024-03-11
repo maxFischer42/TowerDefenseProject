@@ -23,7 +23,7 @@ public class DieOnTimer : MonoBehaviour
         if(dieOnCollision && collision.gameObject.tag == "ENEMY")
         {
             Despawn();
-        } else if(dieOnCollision == false)
+        } else if(dieOnCollision == false && collision.gameObject.tag == "ENEMY")
         {
             if(pierceCount > 0)
             {

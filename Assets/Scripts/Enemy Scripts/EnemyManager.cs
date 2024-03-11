@@ -52,6 +52,8 @@ public class EnemyManager : MonoBehaviour
 
     private bool lockDeathEvent = false;
 
+    public List<HeroPosition> nearHeroes = new List<HeroPosition>();
+
     void Start()
     {
         if(enemy == null)
@@ -90,6 +92,25 @@ public class EnemyManager : MonoBehaviour
     public int GetHealth()
     {
         return health;
+    }
+
+    public HeroPosition getNearestHero()
+    {
+        if (nearHeroes.Count == 0) return null;
+        Vector2 pos = transform.position;
+        float closest = float.MaxValue;
+        HeroPosition p = null;
+        foreach(HeroPosition hero in nearHeroes)
+        {
+            Vector2 myPos = hero.transform.position;
+            float distance = (pos - myPos).magnitude;
+            if(distance < closest)
+            {
+                closest = distance;
+                p = hero;
+            }
+        }
+        return p;
     }
 
     private void Update()
@@ -225,6 +246,7 @@ public class EnemyManager : MonoBehaviour
                 if(p == lastHurtBy)
                 {
                     lastHurtBy.GainXP(myEnemy.xp * 2, 1);
+                    if (lastHurtBy.hasBlessedBlade) lastHurtBy.tower.HandleBlessedBlade();
                 } else
                 {
                     p.GainXP(myEnemy.xp, 1);
@@ -336,9 +358,9 @@ public class EnemyManager : MonoBehaviour
 
     void HandleEvent_OnNearHero(EnemyPassiveActions _event)
     {
-        intBool nearbyHero = GameManager.Instance.heroManager.getNearbyHero(transform.position, _event.condition_modifier);
-        Debug.Log("NerbyheroResult: " + nearbyHero._int + "   :   " + nearbyHero._bool);
-        if(nearbyHero._bool == true)
+        //intBool nearbyHero = GameManager.Instance.heroManager.getNearbyHero(transform.position, _event.condition_modifier);
+        //Debug.Log("NerbyheroResult: " + nearbyHero._int + "   :   " + nearbyHero._bool);
+        if(nearHeroes.Count > 0)
         {
             Debug.Log("OnNearHero");
            
@@ -471,16 +493,17 @@ public class EnemyManager : MonoBehaviour
     void HandleAction_TryPossess(PassiveActionDefinition _action)
     {
         GetComponent<Pather>().arrivedAtPossessed = false;
-        intBool hero = GameManager.Instance.heroManager.getNearbyHero(transform.position, _action.radius);
+        //intBool hero = GameManager.Instance.heroManager.getNearbyHero(transform.position, _action.radius);
+        HeroPosition hero = getNearestHero();
         //if (hero._bool == false) return;
-        if (GameManager.Instance.heroManager.heroList[hero._int].isPossessed) return;
-        if (GameManager.Instance.heroManager.heroList[hero._int].transform.childCount == 0) return; // somehow passed the first check, recheck with transform children
+        if (hero.isPossessed) return;
+        if (hero.transform.childCount == 0) return; // somehow passed the first check, recheck with transform children
         isTryPossess = true;
         possessProgress = _action.timeToPossess;
         possess_length = possessProgress;
         tempPossessInfo = possessProgress;
         objectToReplace = _action.possessedTower;
-        heroToPossess = GameManager.Instance.heroManager.heroList[hero._int];
+        heroToPossess = hero;
         possess_fill_temp = heroToPossess.transform.GetChild(0).GetComponent<TowerManager>().possess_fill;
     }
 

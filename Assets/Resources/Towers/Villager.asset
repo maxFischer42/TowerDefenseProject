@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f30ef077c524714b9a4024073f7833a, type: 3}
-  m_Name: BasicMeleeHero
+  m_Name: Villager
   m_EditorClassIdentifier: 
-  name: Brawler
+  name: Villager
   description: Basic melee unit, attacks nearby enemies.
   prefab: {fileID: 2105639993623973786, guid: 7ca54660aa0fde74db47c141d0166005, type: 3}
   baseHeroInfo:
@@ -25,5 +25,8 @@ MonoBehaviour:
   xpMult: 1.5
   TowerIcon: {fileID: 21300000, guid: c90e4f8929fa356478ad3ca8f1502237, type: 3}
   DescriptionIcon: {fileID: 21300000, guid: c90e4f8929fa356478ad3ca8f1502237, type: 3}
+  isSuper: 0
+  isLightningRod: 0
+  isSupport: 0
   upgradePath_1: {fileID: 11400000, guid: 2905dd23e033e7a4096ab113b22a5589, type: 2}
-  upgradePath_2: {fileID: 0}
+  upgradePath_2: {fileID: 11400000, guid: 11a235ee77957314290297a7853d33da, type: 2}

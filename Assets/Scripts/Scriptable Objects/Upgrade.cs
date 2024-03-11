@@ -31,4 +31,5 @@ public class HeroModify
     public int dmg = 0;
     public RuntimeAnimatorController newSubAnimation;
     public int pierceNum = 0;
+    public int blessedBladeCount = 0;
 }

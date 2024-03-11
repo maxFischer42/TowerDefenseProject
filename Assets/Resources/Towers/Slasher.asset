@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f30ef077c524714b9a4024073f7833a, type: 3}
+  m_Name: Slasher
+  m_EditorClassIdentifier: 
+  name: Slasher
+  description: Sword-based Unit. Attacks nearby enemies
+  prefab: {fileID: 2105639993623973786, guid: 19167d2dee0d4904cbc597b12b433436, type: 3}
+  baseHeroInfo:
+    hp: 8
+    mhp: 8
+    index: 0
+  cost: 0
+  damage: 3
+  mxp: 5
+  xpMult: 1.5
+  TowerIcon: {fileID: 21300000, guid: c90e4f8929fa356478ad3ca8f1502237, type: 3}
+  DescriptionIcon: {fileID: 21300000, guid: c90e4f8929fa356478ad3ca8f1502237, type: 3}
+  isSuper: 0
+  isLightningRod: 0
+  isSupport: 0
+  upgradePath_1: {fileID: 11400000, guid: 8748a1849fe5a5e489748562a7c13230, type: 2}
+  upgradePath_2: {fileID: 11400000, guid: c2648564341f5c14584b6bac2797d424, type: 2}
