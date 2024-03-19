@@ -28,5 +28,5 @@ MonoBehaviour:
   isSuper: 0
   isLightningRod: 0
   isSupport: 1
-  upgradePath_1: {fileID: 11400000, guid: 8c1fd46c57ab99c438a4d3bb55eec078, type: 2}
+  upgradePath_1: {fileID: 0}
   upgradePath_2: {fileID: 0}

@@ -690,6 +690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Range
       objectReference: {fileID: 0}
+    - target: {fileID: 8978573592284679973, guid: 916dbc7423fa6824a89e047955ab599c, type: 3}
+      propertyPath: canNotAttack
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

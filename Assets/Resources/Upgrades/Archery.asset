@@ -18,12 +18,13 @@ MonoBehaviour:
     fireRate: 0
     range: 0
     newHero: {fileID: 11400000, guid: a1d6099ecf6c61f479007f31152299e9, type: 2}
-    newHeroHasPrefab: 0
+    newHeroHasPrefab: 1
     newSpawn: {fileID: 2105639993623973786, guid: 8a62003c7f38efb4c8de16dc4e9428e0, type: 3}
     newPrefab: {fileID: 0}
     dmg: 0
     newSubAnimation: {fileID: 0}
     pierceNum: 0
+    blessedBladeCount: 0
   name: Archery
   blurb: Learn how to use a Bow and Arrow. Transforms the Villager into an Archer.
   cost: 15

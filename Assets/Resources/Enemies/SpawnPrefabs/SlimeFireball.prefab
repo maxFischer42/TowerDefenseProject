@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8955317793877446527}
   - component: {fileID: -8274898010490015008}
   - component: {fileID: 8893200689316797980}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SlimeFireball
   m_TagString: ENEMY
   m_Icon: {fileID: 0}
@@ -182,3 +182,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToDie: 10
   dieOnCollision: 0
+  pierceCount: 50
+  ignorePierce: 1

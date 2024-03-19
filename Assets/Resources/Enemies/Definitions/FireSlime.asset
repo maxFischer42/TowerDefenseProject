@@ -53,7 +53,7 @@ MonoBehaviour:
       waitingDuration: 0
     hasCooldown: 1
     isCooldown: 0
-    cooldown: 0.5
+    cooldown: 4
     currentCooldown: 0
     timeRangeFromSpawn: {x: 1, y: 999}
     chance: 75

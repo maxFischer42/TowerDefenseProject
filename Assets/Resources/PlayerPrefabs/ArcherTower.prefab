@@ -425,6 +425,7 @@ MonoBehaviour:
   bowObjectAnimator: {fileID: 8271510558183546662}
   bowTipTransform: {fileID: 1723706130818746687}
   artOrigin: {fileID: 693970840884786546}
+  aimSpeed: 3
 --- !u!61 &1526387034838265012
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -637,7 +638,7 @@ GameObject:
   m_Layer: 0
   m_Name: LeftHandSolver_Target
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1063,7 +1064,7 @@ GameObject:
   m_Layer: 0
   m_Name: LeftHandEffector
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
