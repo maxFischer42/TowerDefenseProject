@@ -41,14 +41,17 @@ public class HealingMageTower : TowerManager
             heroToDefend = GameManager.Instance.heroManager.GetHeroToDefend(transform.position, priority, baseSupportReach + pos.supportReachMod, pos);
             canSupport = false;
             Invoke(nameof(ResetCanSupport), 5f);
+            anim.SetTrigger("HEAL");
+            base.DoAttack();
         }
 
-        if (range.transformsInRange.Count > 0)
+        else if (range.transformsInRange.Count > 0)
         {
             Vector2 spawnPos = transform.position;
             GameObject hit = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
             hit.GetComponent<ProjectileInfo>().damage = damage + transform.parent.GetComponent<HeroPosition>().damageMod;
             hit.GetComponent<ProjectileInfo>().origin = transform.parent.GetComponent<HeroPosition>();
+            anim.SetTrigger("ATTACK");
             base.DoAttack();
         }
     }
