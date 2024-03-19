@@ -9,6 +9,7 @@ public class TowerRange : MonoBehaviour
     private TowerManager tower;
     public bool canSeeHidden = false;
     public bool canSeeFromSupport = false;
+    public bool canNotAttack = false;
     private CircleCollider2D cCollider;
 
     private void Start()
@@ -36,8 +37,9 @@ public class TowerRange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "ENEMY")
+        if(collision.tag == "ENEMY" && !canNotAttack)
         {
+            if (!collision.GetComponent<EnemyManager>()) return;
             if(collision.GetComponent<EnemyManager>().enemyIsHidden && !canSeeHidden)
             {
                 return;

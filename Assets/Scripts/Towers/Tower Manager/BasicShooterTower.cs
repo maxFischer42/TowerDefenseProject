@@ -13,6 +13,8 @@ public class BasicShooterTower : TowerManager
     public Transform bowTipTransform;
     public Transform artOrigin;
     private Vector2 bowOrigin;
+    private Vector2 prevBoxPos;
+    public float aimSpeed = 1f;
     bool isAiming = false;
 
     private Vector3 direction;
@@ -20,6 +22,7 @@ public class BasicShooterTower : TowerManager
     public override void Start()
     {
         bowOrigin = artOrigin.position;
+        prevBoxPos = bowOrigin;
         base.Start();
 
     }
@@ -30,15 +33,17 @@ public class BasicShooterTower : TowerManager
             Vector3 targetPos = range.currentTarget.position;
             direction = targetPos - bowTipTransform.position;
             direction.Normalize();
-            direction *= shootSpeed;
-            float rotAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            //float rotAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             //bowObjectTransform.transform.rotation= Quaternion.AngleAxis(rotAngle, new Vector3(0, 0, 1));
-            Vector2 offSet = bowOrigin + (Vector2)direction * 2f;
-            bowObjectTransform.transform.position = offSet;
+            Vector2 offSet = bowOrigin + (Vector2)direction;
+            //Vector2 lerpOffset = Vector2.LerpUnclamped(bowOrigin, offSet, Time.deltaTime);
+            //bowObjectTransform.transform.position = Vector2.Lerp(prevBoxPos, offSet, Time.deltaTime * aimSpeed);
+            bowObjectTransform.transform.position = targetPos;
             anim.SetBool("AIM", true);
         } else
         {
             anim.SetBool("AIM", false);
+            prevBoxPos = bowObjectTransform.position;
             bowObjectTransform.transform.position = bowOrigin;
             //bowObjectTransform.transform.rotation = Quaternion.identity;
         }
@@ -51,9 +56,6 @@ public class BasicShooterTower : TowerManager
     }
 
     public override void DoAttack() {
-       
-
-        
 
         // Apply bow transforms and animations
         bowObjectAnimator.SetTrigger("FIRE");
@@ -64,6 +66,8 @@ public class BasicShooterTower : TowerManager
         //bowObjectTransform.transform.position = offSet;
         rot = rotAngle;
         dir = direction;
+
+
 
         Invoke(nameof(DelayedAttack), 0.15f);
  
@@ -76,7 +80,7 @@ public class BasicShooterTower : TowerManager
     public void DelayedAttack()
     {
         GameObject proj = Instantiate(prefabToSpawn, bowTipTransform.position, Quaternion.identity);
-        proj.GetComponent<Rigidbody2D>().velocity = dir;
+        proj.GetComponent<Rigidbody2D>().velocity = dir * shootSpeed;
         proj.GetComponent<ProjectileInfo>().origin = transform.parent.GetComponent<HeroPosition>();
         proj.GetComponent<ProjectileInfo>().damage += damage;
         proj.transform.rotation = Quaternion.AngleAxis(rot, new Vector3(0, 0, 1));

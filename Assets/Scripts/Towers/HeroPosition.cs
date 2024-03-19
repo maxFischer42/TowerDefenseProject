@@ -73,7 +73,7 @@ public class HeroPosition : MonoBehaviour
         isLightningRod = h.isLightningRod;
         isSupport = h.isSupport;
         listOfSupports.Clear();
-        tower = GetComponentInChildren<TowerManager>();
+        tower = GetComponentInChildren<TowerManager>();         
     }
 
     public bool isDisabled = false;

@@ -16,25 +16,26 @@ public class SlimeFireball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        List<int> populatedPositions = new List<int>();
-        foreach (HeroPosition p in GameObject.FindObjectsByType<HeroPosition>(FindObjectsSortMode.InstanceID))
+       
+        rb = GetComponent<Rigidbody2D>();
+        List<HeroPosition> p = GameManager.Instance.heroManager.heroList;
+
+        int count = p.Count;
+        if (count == 0)
         {
-            if(p.isPopulated && !p.isPossessed)
-            {
-                populatedPositions.Add(p.tileId);
-            }
+            Destroy(gameObject);
+            return;
         }
-
-        int count = populatedPositions.Count;
         int rnd = Random.Range(0, count);
-
-        if (count == 0) Destroy(gameObject);
-
+        // Check if hero still exists
+        if(GameManager.Instance.heroManager.heroList[rnd] == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Vector2 pos = GameManager.Instance.heroManager.heroList[rnd].transform.position;
         Vector2 direction = (pos - (Vector2)transform.position).normalized;
-        directionOnSpawn = direction;
-        rb = GetComponent<Rigidbody2D>();
-       
+        directionOnSpawn = direction;       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,7 +44,7 @@ public class SlimeFireball : MonoBehaviour
         {
             collision.GetComponent<TowerManager>().UpdateHealth(damage);
         }
-        if (isPierce && collision.tag == "HERO_CHARACTER") {
+        if (!isPierce && collision.tag == "HERO_CHARACTER") {
             Destroy(gameObject);
         }
     }
@@ -52,6 +53,10 @@ public class SlimeFireball : MonoBehaviour
     {
         Vector2 velocity = directionOnSpawn * speed;
         rb.velocity = velocity;
+
+        // Check if no heroes exist
+        int count = GameManager.Instance.heroManager.heroList.Count;
+        if (count == 0) Destroy(gameObject);
     }
 
 

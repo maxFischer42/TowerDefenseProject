@@ -123,7 +123,7 @@ public class HeroManager : MonoBehaviour
         float temp_b = -1;
         foreach(HeroPosition p in heroList)
         {
-            if (!p.isPopulated || p.isPossessed) continue;
+            if (p.isPossessed) continue;
             // First, check if this hero is within our radius
             float dist = Vector2.Distance(p.transform.position, position);
             if (dist > radius) continue;

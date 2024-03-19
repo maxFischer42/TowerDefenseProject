@@ -572,11 +572,11 @@ public class EnemyManager : MonoBehaviour
         Debug.Log("Started Spawn Entities loop");
         foreach (GameObject child in info.spawnEntities)
         {
-            //Debug.Log("Spawned child of Enemy on Action");
             spawnPos += new Vector2(offsetX * (mult), offsetY * (mult));
             mult += 0.2f;
             GameObject newObj = Instantiate(child, spawnPos, Quaternion.identity);
             newObj.transform.parent = null;
+            Debug.Log("Spawned child of Enemy on Action; " + newObj.name);
             if (info.isEntity) GameObject.FindFirstObjectByType<EntitySpawner>().AddEntity(1);
             if (info.isEntity) newObj.GetComponent<Pather>().SetPather(GameObject.FindObjectOfType<PathwayDisplay>(), GetComponent<Pather>().getTargetIndex());
             if (directionToSpawn == Vector2.zero && info.isEntity)
