@@ -33,4 +33,6 @@ public class HeroModify
     public RuntimeAnimatorController newSubAnimation;
     public int pierceNum = 0;
     public int blessedBladeCount = 0;
+    public Sprite newWeaponSprite;
+    public Vector2 weaponSpriteOffset;
 }

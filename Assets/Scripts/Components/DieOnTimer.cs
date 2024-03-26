@@ -7,7 +7,7 @@ public class DieOnTimer : MonoBehaviour
     public float timeToDie = 2f;
     public bool dieOnCollision = false;
     public int pierceCount = 2;
-    public bool ignorePierce = false;
+    public bool ignorePierce = false;    
 
     void Awake()
     {
@@ -32,6 +32,7 @@ public class DieOnTimer : MonoBehaviour
             }
             else
             {
+                pierceCount--;
                 Despawn();
             }
         }

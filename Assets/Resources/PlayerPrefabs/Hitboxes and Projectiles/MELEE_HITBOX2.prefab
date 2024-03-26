@@ -99,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToDie: 0.05
   dieOnCollision: 0
+  pierceCount: 2
+  ignorePierce: 1
 --- !u!1001 &7143876337549547571
 PrefabInstance:
   m_ObjectHideFlags: 0

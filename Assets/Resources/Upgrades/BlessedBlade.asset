@@ -25,6 +25,21 @@ MonoBehaviour:
     newSubAnimation: {fileID: 0}
     pierceNum: 0
     blessedBladeCount: 10
+    newWeaponSprite: {fileID: 0}
+    weaponSpriteOffset: {x: 0, y: 0}
+  - type: 14
+    fireRate: 0
+    range: 0
+    newHero: {fileID: 0}
+    newHeroHasPrefab: 0
+    newSpawn: {fileID: 0}
+    newPrefab: {fileID: 0}
+    dmg: 0
+    newSubAnimation: {fileID: 0}
+    pierceNum: 0
+    blessedBladeCount: 10
+    newWeaponSprite: {fileID: -8402899385457742569, guid: 3f9ede0ab3d2f31489fa871f2120c6e3, type: 3}
+    weaponSpriteOffset: {x: 0, y: 0}
   name: Blessed Blade
   blurb: Blade becomes enchanted, recovers HP after after defeating 10 enemies.
   cost: 60

@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-  
+
     }
 
     public bool managerIsOpen = false;
@@ -81,6 +81,41 @@ public class GameManager : MonoBehaviour
     private bool isSuper = false;
 
     private int currentMenu = 0; // 0 == none, 1 == tower, 2 == hero
+
+    public bool isPaused = false;
+
+    public GameObject pauseMenuObj;
+    public TimeManager timeManager;
+
+    public void PauseMenu_True()
+    {
+        isPaused = false;
+        pauseMenuObj.SetActive(false);
+        timeManager.UnPause();
+    }
+
+    public void PauseMenu_False()
+    {
+        isPaused = true;
+        pauseMenuObj.SetActive(true);
+        timeManager.Pause();
+    }
+
+    public void HandleMenuPause()
+    {
+        if(isPaused)
+        {
+            PauseMenu_True();
+        } else
+        {
+            PauseMenu_False();
+        }
+    }
+
+    public HeroPosition GetHeroFromMenu()
+    {
+        return temporaryHeroDetail;
+    }
 
     public void PopulateUnitMenuWithUnlocks()
     {
@@ -270,9 +305,10 @@ public class GameManager : MonoBehaviour
         
     }
 
-    void PopulateUnitDetailMenu(HeroPosition h)
+    public void PopulateUnitDetailMenu(HeroPosition h)
     {
         temporaryHeroDetail = h;
+        temporaryHeroDetail.isInMenu = true;
         Upgrade up1 = h.path1;
         Upgrade up2 = h.path2;
         UpdateUnitMenuDisplay();
@@ -282,6 +318,7 @@ public class GameManager : MonoBehaviour
 
     public void SelectUnitClose()
     {
+        temporaryHeroDetail.isInMenu = false;
         unitStatClose.SetActive(false);
         unitStatAnimator.SetBool("isOpen", false);
         unitManagerObject.SetActive(true);
@@ -431,7 +468,7 @@ public class GameManager : MonoBehaviour
                     {
                         newObj.GetComponent<TowerManager>().prefabToSpawn = hero.spawnMod;
                     }
-
+                    temporaryHeroDetail.CheckIfOpen();
                     break;
                 case 3:     // Change Tower's Spawn
                     // check for each tower case
@@ -502,6 +539,9 @@ public class GameManager : MonoBehaviour
                     break;
                 case 13:
                     hero.altAttackUnlocked = true;
+                    break;
+                case 14:
+                    hero.tower.weaponAnimSettings.UpdateSettings(mod.newWeaponSprite, mod.weaponSpriteOffset);
                     break;
 
             }

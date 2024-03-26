@@ -27,7 +27,7 @@ public class EntitySpawner : MonoBehaviour
     {
         if(entities > 0)
         {
-            Invoke(nameof(Spawn), cooldown);
+            Invoke(nameof(Spawn), cooldown * Time.timeScale);
         } else if(target_spawn <= 0 && entities <= 0)
         {
             MoveOnToNextPhase();
@@ -85,7 +85,7 @@ public class EntitySpawner : MonoBehaviour
             entities = phases[current_phase].id_s.Length;
             target_spawn = entities;
             cooldown = phases[current_phase].cooldown_between;
-            Invoke(nameof(Spawn), cooldown);
+            Invoke(nameof(Spawn), cooldown * Time.timeScale);
         }
     }
 }

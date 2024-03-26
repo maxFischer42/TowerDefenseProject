@@ -22,6 +22,24 @@ MonoBehaviour:
     newSpawn: {fileID: 0}
     newPrefab: {fileID: 0}
     dmg: 1
+    newSubAnimation: {fileID: 0}
+    pierceNum: 0
+    blessedBladeCount: 0
+    newWeaponSprite: {fileID: 0}
+    weaponSpriteOffset: {x: 0, y: 0}
+  - type: 14
+    fireRate: 0
+    range: 0
+    newHero: {fileID: 0}
+    newHeroHasPrefab: 0
+    newSpawn: {fileID: 0}
+    newPrefab: {fileID: 0}
+    dmg: 1
+    newSubAnimation: {fileID: 0}
+    pierceNum: 0
+    blessedBladeCount: 0
+    newWeaponSprite: {fileID: -4779958461169761135, guid: 3f9ede0ab3d2f31489fa871f2120c6e3, type: 3}
+    weaponSpriteOffset: {x: 0, y: 0}
   name: Combat Training
   blurb: Train the villager in basic combat principles.
   cost: 5
@@ -29,3 +47,5 @@ MonoBehaviour:
   descendant: {fileID: 11400000, guid: 1abbfb2c12af53e498f3de6f8dec8c51, type: 2}
   levelRequirement: 0
   upgradeIcon: {fileID: -205314758, guid: e5ccda30a1b8ecb438025988e7e294ca, type: 3}
+  fieldUpgrade: 0
+  radiusForUpgrade: 2

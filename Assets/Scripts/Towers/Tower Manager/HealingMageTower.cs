@@ -9,6 +9,7 @@ public class HealingMageTower : TowerManager
     public float baseSupportReach = 3f;
     public bool canSupport = true;
     public float timeBetweenSupport = 5f;
+    public float shootSpeed = 2f;
 
     public override void Start()
     {
@@ -35,7 +36,7 @@ public class HealingMageTower : TowerManager
 
     public override void DoAttack()
     {
-        if (heroToDefend != null && canSupport)
+        if (heroToDefend != null && canSupport && heroToDefend.tower.hp < heroToDefend.tower.maxHP)
         {
             GameObject v = Instantiate(pos.spawnMod, heroToDefend.transform.position, Quaternion.identity);
             heroToDefend = GameManager.Instance.heroManager.GetHeroToDefend(transform.position, priority, baseSupportReach + pos.supportReachMod, pos);
@@ -44,25 +45,34 @@ public class HealingMageTower : TowerManager
             anim.SetTrigger("HEAL");
             base.DoAttack();
         }
-
         else if (range.transformsInRange.Count > 0)
         {
-            Vector2 spawnPos = transform.position;
-            GameObject hit = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
-            hit.GetComponent<ProjectileInfo>().damage = damage + transform.parent.GetComponent<HeroPosition>().damageMod;
-            hit.GetComponent<ProjectileInfo>().origin = transform.parent.GetComponent<HeroPosition>();
-            anim.SetTrigger("ATTACK");
+            //Vector2 spawnPos = transform.position;
+            //GameObject hit = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
+            //hit.GetComponent<ProjectileInfo>().damage = damage + transform.parent.GetComponent<HeroPosition>().damageMod;
+            //hit.GetComponent<ProjectileInfo>().origin = transform.parent.GetComponent<HeroPosition>();
+            anim.SetTrigger("CAST");
+
+
+            Vector3 targetPos = range.currentTarget.position;
+            Vector2 direction = targetPos - transform.position;
+            direction.Normalize();
+            GameObject proj = Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+            proj.GetComponent<Rigidbody2D>().velocity = direction * shootSpeed;
+            proj.GetComponent<ProjectileInfo>().origin = transform.parent.GetComponent<HeroPosition>();
+            proj.GetComponent<ProjectileInfo>().damage += damage;            
+            if (transform.parent.GetComponent<HeroPosition>().pierceMod)
+            {
+                proj.GetComponent<DieOnTimer>().dieOnCollision = false;
+                proj.GetComponent<DieOnTimer>().pierceCount += pos.numPierceMod;
+            }
             base.DoAttack();
         }
     }
 
     public override void HandleSupportProcess()
     {
-        if (heroToDefend == null) return;
-        if (heroToDefend.tower.hp < heroToDefend.tower.maxHP)
-        {
-            DoAttack();
-        }
+        DoAttack();
         base.HandleSupportProcess();
     }
 }

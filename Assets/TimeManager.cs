@@ -5,17 +5,21 @@ using UnityEngine;
 public class TimeManager : MonoBehaviour
 {
 
-    // Update is called once per frame
-    void Update()
+    public float runSpeed = 1.0f;
+
+    private void Start()
     {
-        if(Input.GetKeyDown(KeyCode.O))
-        {
-            Time.timeScale = Time.timeScale + 0.01f;
-            print(Time.timeScale);
-        } else if (Input.GetKeyDown(KeyCode.P))
-        {
-            Time.timeScale = Time.timeScale - 0.01f;
-            print(Time.timeScale);
-        }
+        Time.timeScale = runSpeed;
     }
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void UnPause()
+    {
+        Time.timeScale = runSpeed;
+    }
+
 }

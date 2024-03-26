@@ -57,6 +57,8 @@ public class HeroPosition : MonoBehaviour
     public int blessedBladeCount = 0;
     public bool altAttackUnlocked = false;
 
+    public bool isInMenu = false;
+
     // Archive of what nearby towers have recieved what support upgrades
     public Dictionary<Upgrade, List<HeroPosition>> myUpgradedTowers = new Dictionary<Upgrade, List<HeroPosition>>();
 
@@ -73,7 +75,18 @@ public class HeroPosition : MonoBehaviour
         isLightningRod = h.isLightningRod;
         isSupport = h.isSupport;
         listOfSupports.Clear();
-        tower = GetComponentInChildren<TowerManager>();         
+        tower = GetComponentInChildren<TowerManager>();
+
+        // If hero is open in menu (promotion/class change), update the menu
+        CheckIfOpen();
+    }
+
+    public void CheckIfOpen()
+    {
+        if (GameManager.Instance.GetHeroFromMenu() == this)
+        {
+            GameManager.Instance.PopulateUnitDetailMenu(this);
+        }
     }
 
     public bool isDisabled = false;
@@ -137,6 +150,8 @@ public class HeroPosition : MonoBehaviour
                 // level up
                 level++;
             }
+
+                      
             SpawnParticles(levelUpEffect);
         } else
         {
@@ -150,6 +165,9 @@ public class HeroPosition : MonoBehaviour
                 s.GainXP(Mathf.CeilToInt((float)_xp / 2), 1);
             }
         }
+        // If the hero is open in the side menu and the hero
+        // levels up or gains xp, update the menu  
+        CheckIfOpen();
 
     }
 

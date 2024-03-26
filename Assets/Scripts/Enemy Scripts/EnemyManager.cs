@@ -192,6 +192,10 @@ public class EnemyManager : MonoBehaviour
     {
         if(collision.tag == "PLAYER_PROJECTILE")
         {
+            if(collision.GetComponent<DieOnTimer>())
+            {
+                if (collision.GetComponent<DieOnTimer>().pierceCount <= 0) return;
+            }
             Damage(collision.GetComponent<ProjectileInfo>());
         }
     }

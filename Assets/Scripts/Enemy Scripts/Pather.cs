@@ -48,7 +48,7 @@ public class Pather : MonoBehaviour
         return targetIndex;
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (!isActive) return;
         if(enemy.isTryPossess)

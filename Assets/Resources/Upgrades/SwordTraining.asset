@@ -25,6 +25,21 @@ MonoBehaviour:
     newSubAnimation: {fileID: 0}
     pierceNum: 0
     blessedBladeCount: 0
+    newWeaponSprite: {fileID: 0}
+    weaponSpriteOffset: {x: 0, y: 0}
+  - type: 14
+    fireRate: 0
+    range: 0
+    newHero: {fileID: 11400000, guid: aa45157587bcf2c4ab4030b8002bf78b, type: 2}
+    newHeroHasPrefab: 1
+    newSpawn: {fileID: 7696379311300158588, guid: 61e9f419e899a3342ae700c4dee71de5, type: 3}
+    newPrefab: {fileID: 7696379311300158588, guid: 61e9f419e899a3342ae700c4dee71de5, type: 3}
+    dmg: 0
+    newSubAnimation: {fileID: 0}
+    pierceNum: 0
+    blessedBladeCount: 0
+    newWeaponSprite: {fileID: 467038261791916814, guid: 3f9ede0ab3d2f31489fa871f2120c6e3, type: 3}
+    weaponSpriteOffset: {x: 0, y: 0}
   name: Sword Training
   blurb: Train the villager to weild a shortsword.
   cost: 10

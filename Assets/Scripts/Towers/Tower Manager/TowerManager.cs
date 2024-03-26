@@ -41,6 +41,8 @@ public class TowerManager : MonoBehaviour
     public HeroPosition pos;
 
     public Transform GFX_Obj;
+
+    public WeaponSpriteSettings weaponAnimSettings;
     
 
     public Transform subObject;
